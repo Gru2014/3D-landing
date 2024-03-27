@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Tokenomics = () => {
+const Tokenomics: React.FC = () => {
   return (
-    <div>Tokenomics</div>
+    <div className='w-screen h-screen flex justify-center items-center'>
+      <div>
+
+        <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Tokenomics</h1>
+      </div>
+    </div>
   )
 }
 
