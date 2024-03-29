@@ -1,19 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 
 body {
-
-  background-image: url('/public/assets/images/bg.png');
+  background-color: black;
   background-size: cover;
   font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  font-weight: 200 !important;
 }
 
 .border-gradient {
   background-image: linear-gradient(to bottom, #5FF0E0, #717BF7);
 }
 
+.progress-gradient {
+  background-image: linear-gradient(to right, #5FF0E0, #717BF7);
+}
+
+.background-gradient {
+  background-image: linear-gradient(to bottom, rgba(95, 240, 224, 0.5), rgba(113, 123, 247, 0.5));
+}
+
 .focus-color {
   background: linear-gradient(to bottom, #5FF0E0, #717BF7);
   background-clip: text;
   color: transparent;
+}
+
+.gradient-right {
+  background-image: linear-gradient(to right, #5FF0E0, #717BF7);
+}
+
+.gradient-left {
+  background-image: linear-gradient(to left, #5FF0E0, #717BF7);
+}
+
+.single {
+  background-color: #717BF7;
 }

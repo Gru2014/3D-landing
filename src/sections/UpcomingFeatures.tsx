@@ -7,6 +7,7 @@ interface FeatureCardType {
   title2: string;
   description1: string;
   description2: string;
+  percent: number
 }
 
 const UpcomingFeatures: React.FC = () => {
@@ -16,60 +17,68 @@ const UpcomingFeatures: React.FC = () => {
       title1: 'Linked Wallets',
       title2: '',
       description1: 'Map that will show all wallets that are linked with the selected wallet',
-      description2: ''
+      description2: '',
+      percent: 100
     },
     {
       icon: 'assets/icons/finder.svg',
       title1: 'Wallet Finder',
       title2: 'Level 2',
       description1: 'Update Search Feature to find wallets based off PnL/ROI',
-      description2: ''
+      description2: '',
+      percent: 100
     },
     {
       icon: 'assets/icons/graph.svg',
       title1: 'Profit/',
       title2: 'Loss Graph',
       description1: 'Feature that will allow you to see Realized, Unrealized Gains & ROI that a wallet has made',
-      description2: ''
+      description2: '',
+      percent: 100
     },
     {
       icon: 'assets/icons/black.png',
       title1: 'Copy Trade Bot',
       title2: '',
       description1: 'An autonomous bot that will copy trade selected wallet/s',
-      description2: ''
+      description2: '',
+      percent: 100
     },
     {
       icon: 'assets/icons/finder.svg',
       title1: 'Wallet Finder',
       title2: 'Level 3',
       description1: 'This feature will be revealed when feature is completed',
-      description2: 'ONLY AVAILABLE TO PREMIUM SUBSCRIPTIONS & X TOKEN SUPPLY HOLDERS'
+      description2: 'ONLY AVAILABLE TO PREMIUM SUBSCRIPTIONS & X TOKEN SUPPLY HOLDERS',
+      percent: 100
     },
     {
       icon: 'assets/icons/Mystery.svg',
       title1: 'Mystery Feature',
       title2: '3',
       description1: 'This feature will be revealed when feature is completed',
-      description2: ''
+      description2: '',
+      percent: 100
     },
     {
       icon: 'assets/icons/black.png',
       title1: 'AI Trading Bot',
       title2: 'Indicator',
       description1: 'An Autonomous Bot that will identify the best trades and trade for you(Will require X amount of Tokens for access)',
-      description2: ''
+      description2: '',
+      percent: 100
     },
     {
       icon: 'assets/icons/phone.svg',
       title1: 'Phone App',
       title2: '',
       description1: 'Phone App for seamless use of Spectre on the go',
-      description2: ''
+      description2: '',
+      percent: 100
     },
   ]
   return (
-    <div className='w-screen h-screen flex'>
+    <div className='w-screen h-screen flex background'>
       <div className='basis-1/6 justify-end flex mb-16 items-center'>
         <div>
           <Card card={FeatureCardList[0]} />

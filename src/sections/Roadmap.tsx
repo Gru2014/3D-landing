@@ -1,73 +1,59 @@
 import React from 'react'
-import QCard from '../components/QCard';
-interface QCardType {
-  title: string;
-  questions: string[];
+import { RoadCardList } from '../utils/roadCardListData'
+import RoadCard from '../components/RoadCard'
 
-}
 const Roadmap: React.FC = () => {
-  const QCardList: QCardType[] = [
-    {
-      title: 'Q1',
-      questions: [
-        'Design & Develop Spectre Dashboard',
-        'Design & Develop Spectre Website',
-        'Back-test and Bug-Test Spectre Dashboard Data',
-        'Implement Referral Rewards Program',
-        'Launch Telegram, Twitter & Website'
-      ]
-    },
-    {
-      title: 'Q2',
-      questions: ['Apply for IEO on Binance',
-        'Begin Phone App Development',
-        'Implement New Feature: Wallet Profit/Loss Graph',
-        'Implement New Feature: Linked Wallets Map',
-        'Implement New Feature: Wallet Presale Indicator']
-    },
-    {
-      title: 'Q3',
-      questions: [
-        'Implement New Feature:Mystery Feature 1',
-        'Implement New Feature:Mystery Feature 2',
-        'Implement New Feature:Mystery Feature 3',
-        'Implement New Feature:AI Trading Bot (Will require X amount of Tokens for access)',
-      ]
-    },
-    {
-      title: 'Q4',
-      questions: [
-        'Stay turned!'
-      ]
-    }
-  ]
-  return (
-    <div className='flex w-screen h-screen'>
-      <div className='flex basis-1/4 justify-center mt-52'>
-        <div>
-          <QCard card={QCardList[0]} />
+    return (
+        <div className="flex justify-center flex-col w-full  h-[200vh]">
+            <div className='mt-36'>
+                <div className='my-14'>
+                    <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Roadmap</h1>
+                </div>
+            </div>
+
+            <div className="relative wrap overflow-hidden p-10 ">
+                <div className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border left-1/2"></div>
+                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div className="order-1 w-5/12"></div>
+                    <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+                    </div>
+                    <div className="order-1 w-5/12 flex justify-end">
+                        <RoadCard card={RoadCardList[0]} />
+                    </div>
+                </div>
+
+                <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div className="order-1 w-5/12"></div>
+                    <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+
+                    </div>
+                    <div className="order-1 w-5/12 ">
+                        <RoadCard card={RoadCardList[1]} />
+                    </div>
+                </div>
+
+                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div className="order-1 w-5/12"></div>
+                    <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+                        <h1 className="mx-auto font-semibold text-lg text-white"></h1>
+                    </div>
+                    <div className="order-1 w-5/12">
+                        <RoadCard card={RoadCardList[2]} />
+                    </div>
+                </div>
+
+                <div className="mb-8 flex justify-between  items-center w-full right-timeline">
+                    <div className="order-1 w-5/12"></div>
+                    <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+                        <h1 className="mx-auto text-white font-semibold text-lg"></h1>
+                    </div>
+                    <div className="order-1 w-5/12 ">
+                        <RoadCard card={RoadCardList[3]} />
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div className='flex basis-1/2 flex-col'>
-        <div className='flex basis-1/2 justify-center items-end' >
-          <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Roadmap</h1>
-        </div>
-        <div className='flex basis-1/2 justify-around mt-5'>
-          <div>
-            <QCard card={QCardList[2]} />
-          </div>
-          <div>
-            <QCard card={QCardList[3]} />
-          </div>
-        </div>
-      </div>
-      <div className='flex basis-1/4 justify-center mt-52'>
-        <div>
-          <QCard card={QCardList[1]} />
-        </div>
-      </div>
-    </div>
-  )
+    )
 }
 
 export default Roadmap
