@@ -39,7 +39,8 @@ const Card: React.FC<CurrentFeaturesProps> = ({ card }) => {
                 </div>
                 <div className='absolute bottom-2 w-[90%] border-gradient p-0.5 rounded-full my-1'>
                     <div className='bg-black h-5 rounded-full p-0.5 relative flex justify-center'>
-                        <p className='text-xs leading-[14.52px] z-20 relative text-center text-white'>{card.percent}%</p>
+                        {card.percent === 100 ? '' : <p className='text-xs leading-[14.52px] z-20 relative text-center text-white'>{card.percent}%</p>}
+
                         <div className={`m-0.5 progress-gradient text-center h-4 absolute top-0 left-0 z-10 ${card.percent === 0 ? 'w-0' : card.percent > 97 ? 'w-[98%]' : card.percent === 25 ? 'w-[25%]' : 'w-[' + card.percent + '%]'} rounded-full`} />
                     </div>
                 </div>

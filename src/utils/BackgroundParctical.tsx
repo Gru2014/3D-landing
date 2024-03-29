@@ -10,7 +10,7 @@ const BackgroundPartical: React.FC = () => {
 
   let scrollPercent = 0
 
-  const SEPARATION = 400, AMOUNTX = 10, AMOUNTY = 10, AMOUNTZ = 2, height = window.innerHeight;
+  const SEPARATION = 200, AMOUNTX = 40, AMOUNTY = 10, height = window.innerHeight;
 
   let count = 0;
 
@@ -24,14 +24,10 @@ const BackgroundPartical: React.FC = () => {
     camera.current.position.z = distance;
     scene.current = new THREE.Scene();
     const PI2 = Math.PI * 2;
-    const material = new THREE.SpriteMaterial({
-      color: 0x717BF7,
-      // program: function (context: CanvasRenderingContext2D) {
-      //   context.beginPath();
-      //   context.arc(0, 0, 0.5, 0, PI2, true);
-      //   context.fill();
-      // }
-    });
+    // const material = new THREE.SpriteMaterial({
+    //   color: 0x717BF7,
+    // });
+    const material = new THREE.MeshBasicMaterial({ color: 0x717BF7 })
 
     const group1 = new THREE.Group();
     const group2 = new THREE.Group();
@@ -62,7 +58,8 @@ const BackgroundPartical: React.FC = () => {
 
     for (let ix = 0; ix < AMOUNTX; ix++) {
       for (let iy = 0; iy < AMOUNTY; iy++) {
-        const particle = new THREE.Sprite(material);
+        const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+        const particle = new THREE.Mesh(sphereGeometry, material);
         particle.position.x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
         particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) - 10);
 
@@ -134,15 +131,15 @@ const BackgroundPartical: React.FC = () => {
         for (let iy = 0; iy < AMOUNTY; iy++) {
           const particle = particles[i++];
           if (!particle) return;
-          particle.position.y = (Math.sin((ix + count) * 0.5) * 50) + (Math.sin((iy + count) * 0.5) * 50);
-          particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.5) + 2) * 4 + (Math.sin((iy + count) * 0.5) + 1) * 4;
+          particle.position.y = (Math.sin((ix + count) * 0.5) * 1) + (Math.sin((iy + count) * 0.5) * 1);
+          particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.5) + 2) * 2 + (Math.sin((iy + count) * 0.5) + 1) * 2;
         }
       }
     }
 
     if (!renderer.current || !scene.current || !camera.current) return;
     renderer.current.render(scene.current, camera.current);
-    count += 0.05;
+    count = 0.05;
   };
 
   return (
