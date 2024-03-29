@@ -7,10 +7,11 @@ const BackgroundPartical: React.FC = () => {
   const scene = useRef<THREE.Scene | null>(null);
   const renderer = useRef<THREE.WebGLRenderer | null>(null);
   const groups = useRef<THREE.Group[]>([]);
+  
 
   let scrollPercent = 0
 
-  const SEPARATION = 200, AMOUNTX = 40, AMOUNTY = 10, height = window.innerHeight;
+  const SEPARATIONX = 400, SEPARATIONY = 80, AMOUNTX = 15, AMOUNTY = 40, height = window.innerHeight;
 
   let count = 0;
 
@@ -19,10 +20,14 @@ const BackgroundPartical: React.FC = () => {
 
     const container = containerRef.current;
 
-    camera.current = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.01, 10000);
+    camera.current = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.01, 2200);
+  
+
     let distance = 1 / 2 * window.innerHeight / (Math.tan(80 / 2))
     camera.current.position.z = distance;
     scene.current = new THREE.Scene();
+    scene.current.fog = new THREE.Fog( 0x000000, 1, 4000 );
+
     const PI2 = Math.PI * 2;
     // const material = new THREE.SpriteMaterial({
     //   color: 0x717BF7,
@@ -60,8 +65,8 @@ const BackgroundPartical: React.FC = () => {
       for (let iy = 0; iy < AMOUNTY; iy++) {
         const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
         const particle = new THREE.Mesh(sphereGeometry, material);
-        particle.position.x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
-        particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) - 10);
+        particle.position.x = ix * SEPARATIONX - (AMOUNTX * SEPARATIONX) / 2;
+        particle.position.z = iy * SEPARATIONY - ((AMOUNTY * SEPARATIONY) - 10);
 
         group1.add(particle);
         group2.add(particle.clone());
@@ -131,7 +136,7 @@ const BackgroundPartical: React.FC = () => {
         for (let iy = 0; iy < AMOUNTY; iy++) {
           const particle = particles[i++];
           if (!particle) return;
-          particle.position.y = (Math.sin((ix + count) * 0.5) * 1) + (Math.sin((iy + count) * 0.5) * 1);
+          // particle.position.y = (Math.sin((ix + count) * 0.5) * 1) + (Math.sin((iy + count) * 0.5) * 1);
           particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.5) + 2) * 2 + (Math.sin((iy + count) * 0.5) + 1) * 2;
         }
       }
