@@ -11,7 +11,7 @@ import BackgroundPartical from './utils/BackgroundParctical'
 
 function App() {
   return (
-    <div className='relative overflow-x-hidden'>
+    <div className='relative overflow-x-hidden scroll-smooth'>
       <BackgroundPartical />
       <Header />
       <Dashboard />
