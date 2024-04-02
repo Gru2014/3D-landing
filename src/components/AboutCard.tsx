@@ -7,7 +7,7 @@ interface AboutCardType {
 
 interface AboutCardPropsType {
   card: AboutCardType,
-  isActive: boolean
+  isActive: boolean,
 }
 
 const AboutCard: React.FC<AboutCardPropsType> = ({ card, isActive }) => {

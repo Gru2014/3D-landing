@@ -1,5 +1,10 @@
-import React, { useRef, useEffect, } from 'react';
+import React, { useRef, useEffect, useMemo, } from 'react';
 import * as THREE from 'three';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
+import { ShaderPass } from 'three//examples/jsm/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass';
 
 const BackgroundPartical: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -7,7 +12,8 @@ const BackgroundPartical: React.FC = () => {
   const scene = useRef<THREE.Scene | null>(null);
   const renderer = useRef<THREE.WebGLRenderer | null>(null);
   const groups = useRef<THREE.Group[]>([]);
-  
+  const composer = useRef<EffectComposer | null>(null)
+  const BLOOM_SCENE = 1;
 
   let scrollPercent = 0
 
@@ -15,24 +21,39 @@ const BackgroundPartical: React.FC = () => {
 
   let count = 0;
 
+  const bloomLayer = new THREE.Layers();
+  bloomLayer.set(BLOOM_SCENE);
+
+  const params = {
+    threshold: 0,
+    strength: 1,
+    radius: 0,
+    exposure: 1
+  };
+
+
+
   useEffect(() => {
     if (!containerRef.current) return;
 
     const container = containerRef.current;
 
     camera.current = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.01, 2200);
-  
+
 
     let distance = 1 / 2 * window.innerHeight / (Math.tan(80 / 2))
     camera.current.position.z = distance;
     scene.current = new THREE.Scene();
-    scene.current.fog = new THREE.Fog( 0x000000, 1, 4000 );
+    scene.current.fog = new THREE.Fog(0x000000, 1, 4000);
 
-    const PI2 = Math.PI * 2;
-    // const material = new THREE.SpriteMaterial({
-    //   color: 0x717BF7,
-    // });
-    const material = new THREE.MeshBasicMaterial({ color: 0x717BF7 })
+    const lighting = new THREE.DirectionalLight(0xffffff, 1.0)
+    lighting.position.set(1, 1, 0)
+    scene.current.add(lighting)
+    scene.current.add(new THREE.AmbientLight(0xcccccc));
+
+    const material = new THREE.MeshStandardMaterial({ color: 0x717BF7 })
+
+    const materials = {}
 
     const group1 = new THREE.Group();
     const group2 = new THREE.Group();
@@ -63,7 +84,7 @@ const BackgroundPartical: React.FC = () => {
 
     for (let ix = 0; ix < AMOUNTX; ix++) {
       for (let iy = 0; iy < AMOUNTY; iy++) {
-        const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+        const sphereGeometry = new THREE.SphereGeometry(5, 32, 32);
         const particle = new THREE.Mesh(sphereGeometry, material);
         particle.position.x = ix * SEPARATIONX - (AMOUNTX * SEPARATIONX) / 2;
         particle.position.z = iy * SEPARATIONY - ((AMOUNTY * SEPARATIONY) - 10);
@@ -88,9 +109,25 @@ const BackgroundPartical: React.FC = () => {
       }
     }
 
-    renderer.current = new THREE.WebGLRenderer();
+    renderer.current = new THREE.WebGLRenderer({ antialias: true });
+    renderer.current.setPixelRatio(window.devicePixelRatio);
     renderer.current.setSize(window.innerWidth, window.innerHeight);
+    renderer.current.toneMapping = THREE.ReinhardToneMapping;
     container.appendChild(renderer.current.domElement);
+
+    const renderScene = new RenderPass(scene.current, camera.current);
+    const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85)
+
+    bloomPass.threshold = params.threshold;
+    bloomPass.strength = params.strength;
+    bloomPass.radius = params.radius;
+
+    const outputPass = new OutputPass();
+
+    composer.current = new EffectComposer(renderer.current)
+    composer.current.addPass(renderScene);
+    composer.current.addPass(bloomPass)
+    composer.current.addPass(outputPass);
 
     window.addEventListener('resize', onWindowResize, false);
 
@@ -117,35 +154,38 @@ const BackgroundPartical: React.FC = () => {
 
     camera.current.aspect = window.innerWidth / window.innerHeight;
     camera.current.updateProjectionMatrix();
+
     renderer.current.setSize(window.innerWidth, window.innerHeight);
+    composer.current?.setSize(window.innerWidth, window.innerHeight);
   };
 
   const animate = () => {
     requestAnimationFrame(animate);
-    render();
+    composer.current?.render()
+    // render();
   };
 
-  const render = () => {
-    if (!camera.current || !renderer.current) return;
+  // const render = () => {
+  //   if (!camera.current || !renderer.current) return;
 
-    for (let gx = 0; gx < groups.current.length; gx++) {
-      let i = 0;
-      const particles = groups.current[gx].children;
+  //   for (let gx = 0; gx < groups.current.length; gx++) {
+  //     let i = 0;
+  //     const particles = groups.current[gx].children;
 
-      for (let ix = 0; ix < AMOUNTX; ix++) {
-        for (let iy = 0; iy < AMOUNTY; iy++) {
-          const particle = particles[i++];
-          if (!particle) return;
-          // particle.position.y = (Math.sin((ix + count) * 0.5) * 1) + (Math.sin((iy + count) * 0.5) * 1);
-          particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.5) + 2) * 2 + (Math.sin((iy + count) * 0.5) + 1) * 2;
-        }
-      }
-    }
+  //     for (let ix = 0; ix < AMOUNTX; ix++) {
+  //       for (let iy = 0; iy < AMOUNTY; iy++) {
+  //         const particle = particles[i++];
+  //         if (!particle) return;
+  //         // particle.position.y = (Math.sin((ix + count) * 0.5) * 1) + (Math.sin((iy + count) * 0.5) * 1);
+  //         particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.5) + 2) * 2 + (Math.sin((iy + count) * 0.5) + 1) * 2;
+  //       }
+  //     }
+  //   }
 
-    if (!renderer.current || !scene.current || !camera.current) return;
-    renderer.current.render(scene.current, camera.current);
-    count = 0.05;
-  };
+  //   if (!renderer.current || !scene.current || !camera.current) return;
+  //   renderer.current.render(scene.current, camera.current);
+  //   count = 0.05;
+  // };
 
   return (
     <>
