@@ -15,27 +15,41 @@ export const RoadCardList: RoadCardType[] = [
         ]
     },
     {
-        title: 'Apr 24 - May 24',
+        title: 'May 24 - Jun 24',
         questions: [
             'Apply for IEO on Binance',
-            'Begin Phone App Development',
-            'Implement New Feature: Wallet Profit/Loss Graph',
-            'Implement New Feature: Linked Wallets Map',
-            'Implement New Feature: Wallet Presale Indicator']
+            'Implement New Feature: Profit/Loss Graph',
+            'Implement New Feature: Wallet Finder Level 2',
+            'Implement New Feature: Linked Wallets',
+            'Implement New Feature: Mystery Feature 1',
+            'Implement New Feature: Mystery Feature 2',
+            'Implement New Feature: Mystery Feature 3'
+        ]
     },
     {
-        title: 'Jun 24 - Aug 24',
+        title: 'Jul 24 - Aug 24',
         questions: [
-            'Implement New Feature:Mystery Feature 1',
-            'Implement New Feature:Mystery Feature 2',
-            'Implement New Feature:Mystery Feature 3',
-            'Implement New Feature:AI Trading Bot',
+            'Launch on Binance',
+            'List on Coingecko',
+            'List on CoinMarketCap',
+            'Implement New Feature: Mystery Feature 4',
+            'Implement New Feature: Mystery Feature 5',
+            'Implement New Feature: Presale/Sniper Indicator',
+            'Implement New Feature: Mystery Feature 6',
+            'Implement New Feature: Wallet vs Market Graph',
+            'Implement New Feature: Mystery Feature 7',
+            'Implement New Feature: Copy Trade Bot'
         ]
     },
     {
         title: 'Sep 24 - Dec 24',
         questions: [
-            'Stay turned!'
+            'Apply to List on Bybit',
+            'Implement New Feature: AI Scans',
+            'Implement New Feature: Mystery Feature 8',
+            'Implement New Feature: AI Trading Bot',
+            'Implement New Feature: Mystery Feature 9',
+            'More Feature to be Added - Stay Tuned!'
         ]
     }
 ]

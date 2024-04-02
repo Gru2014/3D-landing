@@ -3,7 +3,7 @@ interface TokenType {
   number: number
 }
 
-export const TokenData = [
+export const TokenData: TokenType[] = [
   {
     title: 'Exchange Listings',
     number: 10000000,
@@ -18,10 +18,10 @@ export const TokenData = [
   },
   {
     title: 'Seed Sale',
-    number: '5000000'
+    number: 5000000
   },
   {
     title: 'Team',
-    number: '10000000'
+    number: 10000000
   }
 ]

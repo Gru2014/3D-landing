@@ -26,7 +26,7 @@ const ReferralRewardsOld = () => {
     },
   ]
   return (
-    <div className='w-screen h-screen flex flex-col background' id='referrals'>
+    <div className='w-screen h-screen flex flex-col background relative' id='referrals'>
       <div className='basis-1/2 flex justify-center items-end'>
         <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Referral Rewards</h1>
       </div>

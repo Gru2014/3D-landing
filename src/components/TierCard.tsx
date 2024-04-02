@@ -25,7 +25,6 @@ const TierCard: React.FC<TierCardProps> = ({card}) => {
                     <p className='text-sm leading-[16.94px]'>When you refer {card.users} {card.users===1 ? 'user' : 'users'} who signs up to a monthly or yearly subscription</p>
                 </div>
             </div>
-
         </div>
   )
 }

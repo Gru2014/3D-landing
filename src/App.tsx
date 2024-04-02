@@ -8,10 +8,12 @@ import About from './sections/About';
 import Tokenomics from './sections/Tokenomics';
 import ReferralRewards from './sections/ReferralRewards';
 import BackgroundPartical from './utils/BackgroundParctical'
+import SingUp from './components/SingUp';
 
 function App() {
   return (
     <div className='relative overflow-x-hidden scroll-smooth'>
+      {/* <SingUp /> */}
       <BackgroundPartical />
       <Header />
       <Dashboard />
