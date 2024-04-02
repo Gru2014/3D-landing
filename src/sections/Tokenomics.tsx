@@ -9,7 +9,7 @@ const Tokenomics: React.FC = () => {
   const [isHover, setIsHover] = useState(NaN)
 
   return (
-    <div className='h-screen flex flex-col w-screen relative' id='tokenomics'>
+    <div className=' h-screen flex flex-col w-screen max-md:h-auto relative' id='tokenomics'>
       <div className='basis-1/5 flex justify-center items-end'>
         <div>
           <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Tokenomics</h1>
@@ -28,7 +28,7 @@ const Tokenomics: React.FC = () => {
         <div className='flex w-[45%] flex-col my-6 items-start justify-around'>
             <div className='flex gap-2 flex-col items-center'>
               {TokenData.map((card, index) => (
-                <div onClick={() => setIsActive(index)} onMouseOver={() => setIsHover(index)} onMouseOut={() => setIsHover(NaN)}>
+                <div className='w-[600px] h-[70px] flex justify-center items-center' onClick={() => setIsActive(index)} onMouseOver={() => setIsHover(index)} onMouseOut={() => setIsHover(NaN)}>
                   <TokenomicsCard card={card} index={index} isActive={isActive} isHover={isHover} />
                 </div>
               ))}

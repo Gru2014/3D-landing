@@ -21,7 +21,7 @@ const TierTitle: React.FC<TierTitlePropsType> = ({ card, index, activeIndex }) =
           <div className='flex justify-center items-center'>
             <img src={`assets/icons/${card.icon}`}></img>
           </div>
-          <div className='text-2xl text-white font-light'>
+          <div className='text-2xl text-white font-light mx-2'>
             <h1>{card.title}</h1>
           </div>
         </div>

@@ -20,7 +20,7 @@ function App() {
       <BackgroundPartical />
       <div className={`flex flex-col gap-9 relative   ${isShow === 'SignUp' || isShow === 'SignIn' ? 'justify-center items-center overflow-hidden' : 'overflow-x-hidden scroll-smooth'} `}>
         {isShow === 'SignUp' ?
-          <div className='z-50 relative justify-center items-center my-7'>
+          <div className='z-50 relative justify-center overflow-hidden items-center my-7'>
             <SignUp setIsShow={setIsShow} />
           </div> : isShow === 'SignIn' ?
             <div className='z-50 relative justify-center items-center my-20 '>
@@ -33,7 +33,7 @@ function App() {
               <About />
               <Features />
               <Tokenomics />
-              {/* <Roadmap /> */}
+              <Roadmap />
               <ReferralRewards />
             </>
         }

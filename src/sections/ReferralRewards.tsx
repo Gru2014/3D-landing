@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { TierTitleData } from '../utils/TierData'
-import { TierContentData } from '../utils/TierData'
 import TierTitle from '../components/TierTitle'
 
 const ReferralRewards = () => {
@@ -8,7 +7,7 @@ const ReferralRewards = () => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <div className='h-screen w-screen flex flex-col relative' id='referrals'>
+    <div className='h-screen w-screen flex flex-col relative max-md:h-auto' id='referrals'>
       <div className='basis-1/5 flex justify-center items-end'>
         <div>
           <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Referral Rewards</h1>

@@ -17,7 +17,7 @@ const BackgroundPartical: React.FC = () => {
 
   let scrollPercent = 0
 
-  const SEPARATIONX = 400, SEPARATIONY = 80, AMOUNTX = 15, AMOUNTY = 40, height = window.innerHeight;
+  const SEPARATIONX = 400, SEPARATIONY = 120, AMOUNTX = 15, AMOUNTY = 25, height = window.innerHeight;
 
   let count = 0;
 
@@ -63,6 +63,7 @@ const BackgroundPartical: React.FC = () => {
     const group6 = new THREE.Group();
     const group7 = new THREE.Group();
     const group8 = new THREE.Group();
+    
 
     scene.current.add(group1)
     scene.current.add(group2)
