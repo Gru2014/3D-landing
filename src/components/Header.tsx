@@ -2,7 +2,11 @@ import React, { useRef, useState } from 'react'
 import { buttonList } from '../utils/MenuList'
 import MenuList from './MenuList'
 
-const Header: React.FC = () => {
+interface HeaderPropsType {
+  setIsShow: any
+}
+
+const Header: React.FC<HeaderPropsType> = ({setIsShow}) => {
 
   const [btnActive, setBtnActive] = useState(0)
 
@@ -32,12 +36,12 @@ const Header: React.FC = () => {
           ))}
         </div>
         <div className='basis-1/5 flex flex-row items-center justify-end gap-5  text-white max-md:basis-1/2 max-[449px]:hidden'>
-          <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]'>
+          <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={()=>setIsShow('SignUp')}>
             <div className='py-3 px-8 rounded-[20px] text-xs hover:bg-transparent bg-black'>
               Sign Up
             </div>
           </div>
-          <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]'>
+          <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={()=>setIsShow('SignIn')}>
             <div className='py-3 px-8 rounded-[20px] text-xs hover:bg-transparent bg-black'>
               Sign In
             </div>

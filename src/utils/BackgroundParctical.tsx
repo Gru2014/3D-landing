@@ -26,7 +26,7 @@ const BackgroundPartical: React.FC = () => {
 
   const params = {
     threshold: 0,
-    strength: 1,
+    strength: 2,
     radius: 0,
     exposure: 1
   };
@@ -84,7 +84,7 @@ const BackgroundPartical: React.FC = () => {
 
     for (let ix = 0; ix < AMOUNTX; ix++) {
       for (let iy = 0; iy < AMOUNTY; iy++) {
-        const sphereGeometry = new THREE.SphereGeometry(5, 32, 32);
+        const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
         const particle = new THREE.Mesh(sphereGeometry, material);
         particle.position.x = ix * SEPARATIONX - (AMOUNTX * SEPARATIONX) / 2;
         particle.position.z = iy * SEPARATIONY - ((AMOUNTY * SEPARATIONY) - 10);
@@ -161,31 +161,31 @@ const BackgroundPartical: React.FC = () => {
 
   const animate = () => {
     requestAnimationFrame(animate);
+    render();
     composer.current?.render()
-    // render();
   };
 
-  // const render = () => {
-  //   if (!camera.current || !renderer.current) return;
+  const render = () => {
+    if (!camera.current || !renderer.current) return;
 
-  //   for (let gx = 0; gx < groups.current.length; gx++) {
-  //     let i = 0;
-  //     const particles = groups.current[gx].children;
+    for (let gx = 0; gx < groups.current.length; gx++) {
+      let i = 0;
+      const particles = groups.current[gx].children;
 
-  //     for (let ix = 0; ix < AMOUNTX; ix++) {
-  //       for (let iy = 0; iy < AMOUNTY; iy++) {
-  //         const particle = particles[i++];
-  //         if (!particle) return;
-  //         // particle.position.y = (Math.sin((ix + count) * 0.5) * 1) + (Math.sin((iy + count) * 0.5) * 1);
-  //         particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.5) + 2) * 2 + (Math.sin((iy + count) * 0.5) + 1) * 2;
-  //       }
-  //     }
-  //   }
+      for (let ix = 0; ix < AMOUNTX; ix++) {
+        for (let iy = 0; iy < AMOUNTY; iy++) {
+          const particle = particles[i++];
+          if (!particle) return;
+          particle.position.y = (Math.sin((ix + count) * 0.5) * 10) + (Math.sin((iy + count) * 0.5) * 20);
+          particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.5) + 2) * 1.5 + (Math.sin((iy + count) * 0.5) + 1) * 1.5;
+        }
+      }
+    }
 
-  //   if (!renderer.current || !scene.current || !camera.current) return;
-  //   renderer.current.render(scene.current, camera.current);
-  //   count = 0.05;
-  // };
+    if (!renderer.current || !scene.current || !camera.current) return;
+    renderer.current.render(scene.current, camera.current);
+    count += 0.05;
+  };
 
   return (
     <>
