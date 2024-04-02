@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RoadCardList } from '../utils/roadCardListData'
 import RoadCard from '../components/RoadCard'
 
 const Roadmap: React.FC = () => {
     const direction = ['left', 'right', 'left', 'right']
+    const [activatedIds, setActivatedIds] = useState<Array<number>>([])
+
+    const toggleCard = (id: number) => {
+        if (activatedIds.includes(id)) { setActivatedIds(activatedIds.filter(d => d !== id)) } else { setActivatedIds([...activatedIds, id]) }
+    }
     return (
         <div className="flex justify-center flex-col relative w-full max-md:h-auto  h-[200vh]" id='roadmap'>
             <div className='mt-6'>
@@ -13,11 +18,12 @@ const Roadmap: React.FC = () => {
             </div>
             <div className="relative wrap flex overflow-hidden p-10">
                 <div className='basis-5/12 flex items-end flex-col gap-32'>
-                    <div>
-                        <RoadCard card={RoadCardList[0]} direction={direction[0]} />
+                    <div onClick={()=>toggleCard(1)}>
+                        {/* <RoadCard card={RoadCardList[0]} isActive = {activatedIds.includes(1)} direction={direction[0]} /> */}
+
                     </div>
-                    <div>
-                        <RoadCard card={RoadCardList[2]} direction={direction[2]} />
+                    <div onClick={()=>toggleCard(2)}>
+                        {/* <RoadCard card={RoadCardList[2]} isActive = {activatedIds.includes(2)} direction={direction[2]} /> */}
                     </div>
                 </div>
                 <div className='flex basis-2/12'>
@@ -25,11 +31,11 @@ const Roadmap: React.FC = () => {
                     <div className='basis-1/2'></div>
                 </div>
                 <div className='basis-5/12 mt-[225px] flex flex-col gap-28'>
-                    <div>
-                        <RoadCard card={RoadCardList[1]} direction={direction[1]} />
+                    <div onClick={()=>toggleCard(3)}>
+                        {/* <RoadCard card={RoadCardList[1]} isActive = {activatedIds.includes(3)} direction={direction[1]} /> */}
                     </div>
-                    <div>
-                        <RoadCard card={RoadCardList[3]} direction={direction[3]} />
+                    <div onClick={()=>toggleCard(4)}>
+                        {/* <RoadCard card={RoadCardList[3]} isActive = {activatedIds.includes(4)} direction={direction[3]} /> */}
                     </div>
                 </div>
                 {/* <div className=" absolute line-gradient  h-full border left-1/2"></div>

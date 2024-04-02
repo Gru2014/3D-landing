@@ -17,7 +17,7 @@ const Features = () => {
                     <div className='my-14'>
                         <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Current Features</h1>
                     </div>
-                    <div className='flex flex-row justify-around flex-wrap gap-8'>
+                    <div className='flex flex-row justify-around flex-wrap'>
                         {CurrentFeatureCardList.map((card, index) => {
                             const isActive = activatedIds.includes(card.id);
                             return <div onClick={() => toggleCard(card.id)}>
