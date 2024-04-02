@@ -17,10 +17,10 @@ const Features = () => {
                     <div className='my-14'>
                         <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Current Features</h1>
                     </div>
-                    <div className='flex flex-row justify-around flex-wrap'>
+                    <div className='flex flex-row justify-evenly gap-1 flex-wrap'>
                         {CurrentFeatureCardList.map((card, index) => {
                             const isActive = activatedIds.includes(card.id);
-                            return <div onClick={() => toggleCard(card.id)}>
+                            return <div className='w-[220px] h-[280px] flex justify-center items-center' onClick={() => toggleCard(card.id)}>
                                 <Card card={card} key={card.id} isActive={isActive} />
                             </div>
                         })}
@@ -30,10 +30,10 @@ const Features = () => {
                     <div className='my-14'>
                         <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Upcoming Features</h1>
                     </div>
-                    <div className='flex flex-row justify-evenly flex-wrap gap-8'>
+                    <div className='flex flex-row justify-evenly flex-wrap gap-1'>
                         {UpcomingFeatureCardList.map((card, index) => {
                             const isActive = activatedIds.includes(card.id);
-                            return <div onClick={() => toggleCard(card.id)}>
+                            return <div className='w-[220px] h-[280px] flex justify-center items-center' onClick={() => toggleCard(card.id)}>
                                 <Card card={card} key={index} isActive={isActive} />
                             </div>
                         }
