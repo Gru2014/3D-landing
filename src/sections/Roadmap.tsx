@@ -62,8 +62,8 @@ const Roadmap: React.FC = () => {
                         <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-2 top-[450px]'></div>
                         <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-3 top-[800px]'></div>
                         <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-4 top-[986px]'></div>
-                        <div className='border-dashed border-b absolute w-full h-0.5 top-[238px] bg-blend-exclusion border-gradient-left'></div>
-                        <div className='border-dashed border-b absolute w-full h-0.5 top-[813px] border-gradient-right'></div>
+                        <div className='border-dashed border-b absolute w-full h-0.5 top-[238px] '><img src="assets/icons/timeline-left.svg" alt="" /></div>
+                        <div className='border-dashed border-b absolute w-full h-0.5 top-[813px] '><img src="assets/icons/timeline-right.svg" alt="" /></div>
                     </div>
                     <div className='flex relative basis-1/2'>
                         <div className='h-full border-gradient w-[1px]'></div>
@@ -71,8 +71,8 @@ const Roadmap: React.FC = () => {
                         <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-2 top-[450px]'></div>
                         <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-3 top-[800px]'></div>
                         <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-4 top-[986px]'></div>
-                        <div className='border-dashed border-b absolute w-full h-0.5  top-[463px] border-gradient-right'></div>
-                        <div className='border-dashed border-b absolute w-full h-0.5  top-[1000px] border-gradient-left'></div>
+                        <div className='border-dashed border-b absolute w-full h-0.5  top-[463px] '><img src="assets/icons/timeline-right.svg" alt="" /></div>
+                        <div className='border-dashed border-b absolute w-full h-0.5  top-[1000px] '><img src="assets/icons/timeline-left.svg" alt="" /></div>
                     </div>
                 </div>
                 <div className='basis-5/12 mt-[225px] flex flex-col gap-28'>
