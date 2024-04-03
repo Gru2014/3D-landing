@@ -12,7 +12,6 @@ import SignUp from './components/SignUp';
 import SingIn from './components/SignIn';
 
 function App() {
-
   const [isShow, setIsShow] = useState<string>('')
   console.log(isShow);
   return (
