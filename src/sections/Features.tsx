@@ -12,11 +12,13 @@ const Features = () => {
 
     return (
         <div className='w-screen flex relative flex-col h-[200vh] max-md:h-auto' id='features'>
+            <div className='basis-[10%] flex justify-center items-end'>
+                <div className=''>
+                    <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Current Features</h1>
+                </div>
+            </div>
             <div className=' px-24'>
-                <div className='flex flex-col justify-center mt-6 '>
-                    <div className='my-14'>
-                        <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Current Features</h1>
-                    </div>
+                <div className='flex mt-8 flex-col justify-center  '>
                     <div className='flex flex-row justify-evenly gap-1 flex-wrap'>
                         {CurrentFeatureCardList.map((card, index) => {
                             const isActive = activatedIds.includes(card.id);

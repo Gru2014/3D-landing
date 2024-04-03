@@ -11,10 +11,10 @@ const Roadmap: React.FC = () => {
     }
     console.log(activatedIds.includes(1));
     return (
-        <div className=" flex justify-center flex-col relative w-full max-md:h-auto  h-[200vh]" id='roadmap'>
-            <div className='mt-6'>
-                <div className='my-14'>
-                    <h1 className='text-5xl focus-color text-center font-light leading-[58.09px]'>Roadmap</h1>
+        <div className=" flex  flex-col relative w-full max-md:h-auto  h-[200vh]" id='roadmap'>
+            <div className='basis-[10%] flex justify-center items-end'>
+                <div className=''>
+                    <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Roadmap</h1>
                 </div>
             </div>
             <div className="relative wrap flex overflow-hidden p-10">
@@ -58,21 +58,21 @@ const Roadmap: React.FC = () => {
                 <div className='flex basis-2/12'>
                     <div className='flex relative justify-end basis-1/2'>
                         <div className='h-full border-gradient w-[1px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-l-full absolute bg-cyan-300 top-[225px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-l-full absolute bg-cyan-400 top-[450px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-l-full absolute bg-cyan-300 top-[800px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-l-full absolute bg-cyan-300 top-[986px]'></div>
-                        <div className='border-dashed border-b absolute w-[120px] h-[238px] border-cyan-300'></div>
-                        <div className='border-dashed border-b absolute w-[120px] h-[813px] border-cyan-300'></div>
+                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-1 top-[225px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-2 top-[450px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-3 top-[800px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-4 top-[986px]'></div>
+                        <div className='border-dashed border-b absolute w-full h-0.5 top-[238px] bg-blend-exclusion border-gradient-left'></div>
+                        <div className='border-dashed border-b absolute w-full h-0.5 top-[813px] border-gradient-right'></div>
                     </div>
                     <div className='flex relative basis-1/2'>
                         <div className='h-full border-gradient w-[1px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-r-full absolute bg-cyan-300 top-[225px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-r-full absolute bg-cyan-400 top-[450px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-r-full absolute bg-cyan-300 top-[800px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-r-full absolute bg-cyan-300 top-[986px]'></div>
-                        <div className='border-dashed border-b absolute w-[120px] h-[463px] border-cyan-300'></div>
-                        <div className='border-dashed border-b absolute w-[120px] h-[1000px] border-cyan-300'></div>
+                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-1 top-[225px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-2 top-[450px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-3 top-[800px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-4 top-[986px]'></div>
+                        <div className='border-dashed border-b absolute w-full h-0.5  top-[463px] border-gradient-right'></div>
+                        <div className='border-dashed border-b absolute w-full h-0.5  top-[1000px] border-gradient-left'></div>
                     </div>
                 </div>
                 <div className='basis-5/12 mt-[225px] flex flex-col gap-28'>

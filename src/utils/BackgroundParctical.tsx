@@ -17,7 +17,7 @@ const BackgroundPartical: React.FC = () => {
 
   let scrollPercent = 0
 
-  const SEPARATIONX = 400, SEPARATIONY = 120, AMOUNTX = 15, AMOUNTY = 25, height = window.innerHeight;
+  const SEPARATIONX = 400, SEPARATIONY = 250, AMOUNTX = 15, AMOUNTY = 12, height = window.innerHeight;
 
   let count = 0;
 
@@ -25,10 +25,10 @@ const BackgroundPartical: React.FC = () => {
   bloomLayer.set(BLOOM_SCENE);
 
   const params = {
-    threshold: 0,
-    strength: 2,
-    radius: 0,
-    exposure: 1
+    threshold: 0.02,
+    strength: 1.0,
+    radius: 0.1,
+    exposure: 2.0
   };
 
 
@@ -51,7 +51,7 @@ const BackgroundPartical: React.FC = () => {
     scene.current.add(lighting)
     scene.current.add(new THREE.AmbientLight(0xcccccc));
 
-    const material = new THREE.MeshStandardMaterial({ color: 0x717BF7 })
+    const material = new THREE.MeshStandardMaterial({ color: 0x717BF7, roughness: 0, metalness: 0.7 })
 
     const materials = {}
 
@@ -63,7 +63,7 @@ const BackgroundPartical: React.FC = () => {
     const group6 = new THREE.Group();
     const group7 = new THREE.Group();
     const group8 = new THREE.Group();
-    
+
 
     scene.current.add(group1)
     scene.current.add(group2)
@@ -114,11 +114,11 @@ const BackgroundPartical: React.FC = () => {
     renderer.current.setPixelRatio(window.devicePixelRatio);
     renderer.current.setSize(window.innerWidth, window.innerHeight);
     renderer.current.toneMapping = THREE.ReinhardToneMapping;
+    renderer.current.toneMappingExposure = Math.pow( params.exposure, 4.0 );
     container.appendChild(renderer.current.domElement);
 
     const renderScene = new RenderPass(scene.current, camera.current);
     const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85)
-
     bloomPass.threshold = params.threshold;
     bloomPass.strength = params.strength;
     bloomPass.radius = params.radius;
@@ -177,7 +177,7 @@ const BackgroundPartical: React.FC = () => {
         for (let iy = 0; iy < AMOUNTY; iy++) {
           const particle = particles[i++];
           if (!particle) return;
-          particle.position.y = (Math.sin((ix + count) * 0.5) * 10) + (Math.sin((iy + count) * 0.5) * 20);
+          particle.position.y = (Math.sin((ix + count) * 0.5) * 40) + (Math.sin((iy + count) * 0.5) * 40);
           particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.5) + 2) * 1.5 + (Math.sin((iy + count) * 0.5) + 1) * 1.5;
         }
       }
