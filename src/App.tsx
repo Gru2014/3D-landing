@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Dashboard from './sections/Dashboard';
 import Header from './components/Header';
@@ -10,12 +10,15 @@ import ReferralRewards from './sections/ReferralRewards';
 import BackgroundPartical from './utils/BackgroundParctical'
 import SignUp from './components/SignUp';
 import SingIn from './components/SignIn';
+import { BtnContextProvider } from './context/ButtonContext';
 
 function App() {
   const [isShow, setIsShow] = useState<string>('')
-  console.log(isShow);
+
+  const [btnActive, setBtnActive] = useState(0)
+
   return (
-    <>
+    <BtnContextProvider>
       <BackgroundPartical />
       <div className={`flex flex-col gap-9 relative   ${isShow === 'SignUp' || isShow === 'SignIn' ? 'justify-center items-center overflow-hidden' : 'overflow-x-hidden scroll-smooth'} `}>
         {isShow === 'SignUp' ?
@@ -38,7 +41,7 @@ function App() {
         }
 
       </div>
-    </>
+    </BtnContextProvider>
   );
 }
 
