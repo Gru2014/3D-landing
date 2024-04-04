@@ -28,6 +28,6 @@ export const AboutData: AboutCardType[] = [
   {
     id: 5,
     content: 'Let AI Trade for You (Coming Soon)',
-    class: 'gradient-right'
+    class: 'gradient-left'
   },
 ]

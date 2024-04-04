@@ -1,16 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { buttonList } from '../utils/MenuList'
 import MenuList from './MenuList'
+import { useBtnContext } from '../context/ButtonContext'
 
 interface HeaderPropsType {
   setIsShow: any
 }
 
-const Header: React.FC<HeaderPropsType> = ({setIsShow}) => {
+const Header: React.FC<HeaderPropsType> = ({ setIsShow }) => {
 
-  const [btnActive, setBtnActive] = useState(0)
 
   const [isShowMenu, setIsShowMenu] = useState(true)
+
+  const [btnHover, setBtnHover] = useState(NaN)
+
+  const { activeBtn } = useBtnContext()
 
   return (
     <>
@@ -30,19 +34,23 @@ const Header: React.FC<HeaderPropsType> = ({setIsShow}) => {
         </div>
         <div className='flex basis-3/5 flex-row max-md:hidden items-center justify-around'>
           {buttonList.map((button, index) => (
-            <div onClick={() => setBtnActive(index)} className={btnActive === index ? 'text-xl focus-color' : 'text-xl text-white'}>
-              <a key={index} href={button.url}>{button.title}</a>
+            <div onMouseOver={() => setBtnHover(index)} onMouseOut={() => setBtnHover(NaN)}>
+              <div  className={`${activeBtn === index ? 'focus-color'  : btnHover === index ? 'focus-color' : 'text-white '} text-xl`}>
+                <a key={index} href={button.url} >{button.title}</a>
+              </div>
             </div>
           ))}
         </div>
         <div className='basis-1/5 flex flex-row items-center justify-end gap-5  text-white max-md:basis-1/2 max-[449px]:hidden'>
-          <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={()=>setIsShow('SignUp')}>
-            <div className='py-3 px-8 rounded-[20px] text-xs hover:bg-transparent bg-black'>
-              Sign Up
+          <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={() => setIsShow('SignUp')}>
+            <div className='py-3 px-8 rounded-[20px] text-xs hover:bg-opacity-25 bg-black'>
+              <div className='focus-color'>
+                Sign Up
+              </div>
             </div>
           </div>
-          <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={()=>setIsShow('SignIn')}>
-            <div className='py-3 px-8 rounded-[20px] text-xs hover:bg-transparent bg-black'>
+          <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={() => setIsShow('SignIn')}>
+            <div className='py-3 px-8 rounded-[20px] text-xs hover:bg-opacity-25 bg-black'>
               Sign In
             </div>
           </div>

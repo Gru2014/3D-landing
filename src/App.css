@@ -5,6 +5,10 @@ body {
   background-size: cover;
   font-family: 'Inter', sans-serif;
   font-weight: 200 !important;
+  scroll-behavior: smooth;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .border-gradient {

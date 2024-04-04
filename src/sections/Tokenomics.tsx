@@ -17,13 +17,13 @@ const Tokenomics: React.FC = () => {
       </div>
       <div className='flex flex-row basis-4/5'>
         <div className='flex w-[55%] justify-center items-center'>
-          {/* <Chart /> */}
-          <div className="w-[450px] h-[450px] flex justify-center items-center bg-cover" style={{ backgroundImage: "url('assets/images/progress.png')" }}>
+          <Chart />
+          {/* <div className="w-[450px] h-[450px] flex justify-center items-center bg-cover" style={{ backgroundImage: "url('assets/images/progress.png')" }}>
             <div className='text-center text-white'>
               <h1 className='text-5xl leading-10 font-bold'>100M</h1>
               <p className='text-3xl leading-10 font-light'>Total Supply</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='flex w-[45%] flex-col my-6 items-start justify-around'>
             <div className='flex gap-2 flex-col items-center'>

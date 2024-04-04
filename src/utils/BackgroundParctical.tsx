@@ -5,8 +5,15 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 import { ShaderPass } from 'three//examples/jsm/postprocessing/ShaderPass.js';
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass';
+import { useBtnContext } from '../context/ButtonContext';
 
 const BackgroundPartical: React.FC = () => {
+
+  const { activeBtn, setActiveBtn } = useBtnContext()
+
+
+
+
   const containerRef = useRef<HTMLDivElement>(null);
   const camera = useRef<THREE.PerspectiveCamera | null>(null);
   const scene = useRef<THREE.Scene | null>(null);
@@ -114,7 +121,7 @@ const BackgroundPartical: React.FC = () => {
     renderer.current.setPixelRatio(window.devicePixelRatio);
     renderer.current.setSize(window.innerWidth, window.innerHeight);
     renderer.current.toneMapping = THREE.ReinhardToneMapping;
-    renderer.current.toneMappingExposure = Math.pow( params.exposure, 4.0 );
+    renderer.current.toneMappingExposure = Math.pow(params.exposure, 4.0);
     container.appendChild(renderer.current.domElement);
 
     const renderScene = new RenderPass(scene.current, camera.current);
@@ -142,11 +149,23 @@ const BackgroundPartical: React.FC = () => {
   }, []);
 
   const handleScrollEvent = () => {
-    console.log(document.documentElement.scrollTop);
     scrollPercent = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
-    console.log(scrollPercent);
     if (camera.current) {
       camera.current.position.y = -scrollPercent * height * 8
+    }
+    console.log(scrollPercent);
+    if (scrollPercent === 1) {
+      setActiveBtn(5)
+    } else if (scrollPercent > 5 / 7) {
+      setActiveBtn(4)
+    } else if (scrollPercent > 4 / 7) {
+      setActiveBtn(3)
+    } else if (scrollPercent > 2 / 7) {
+      setActiveBtn(2)
+    } else if (scrollPercent > 1 / 7) {
+      setActiveBtn(1)
+    } else {
+      setActiveBtn(0)
     }
   }
 
