@@ -18,7 +18,7 @@ interface CurrentFeaturesProps {
 
 const Card: React.FC<CurrentFeaturesProps> = ({ card, isActive }) => {
     return (
-        <div className={`transition-all rounded-[20px] p-[3px] border-gradient cursor-pointer ${isActive ? 'max-w-[220px] h-[280px] -mt-6' : 'max-w-[170px] h-[230px]'} relative`}>
+        <div className={` rounded-[20px] p-[3px] border-gradient cursor-pointer ${isActive ? 'max-w-[220px] h-[280px] -mt-6' : 'max-w-[170px] h-[230px]'} relative`}>
             <div className={`rounded-[20px] flex flex-col items-center hover:bg-opacity-25  py-5 ${isActive ? 'max-w-[214px] h-[274px] bg-opacity-25 bg-black' : 'bg-black max-w-[164px] h-[224px]'}`}>
                 <div className='flex flex-col  items-center h-24 '>
                     <div className='rounded-full border-gradient p-0.5 w-[50px] h-[50px]'>
