@@ -186,7 +186,7 @@ export const UpcomingFeatureCardList: FeatureCardType[] = [
         percent: 0
     },
     {
-        icon: 'assets/icons/aibot.png',
+        icon: 'assets/icons/aiBot.png',
         title1: 'AI Trading Bot',
         title2: 'Indicator',
         description1: 'An Autonomous Bot that will identify the best trades and trade for you(Will require X amount of Tokens for access)',
