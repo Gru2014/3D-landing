@@ -154,7 +154,7 @@ const BackgroundPartical: React.FC = () => {
       camera.current.position.y = -scrollPercent * height * 8
     }
     console.log(scrollPercent);
-    if (scrollPercent === 1) {
+    if (scrollPercent > 0.95) {
       setActiveBtn(5)
     } else if (scrollPercent > 5 / 7) {
       setActiveBtn(4)
