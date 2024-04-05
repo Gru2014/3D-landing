@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 body {
   background-color: black;
   background-size: cover;
   font-family: 'Inter', sans-serif;
   font-weight: 200 !important;
   scroll-behavior: smooth;
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -94,21 +100,25 @@ html {
   clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
   opacity: 0.25;
 }
+
 .segment:nth-child(2) {
   transform: rotate(18deg);
   clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
   opacity: 0.25;
 }
+
 .segment:nth-child(3) {
   transform: rotate(54deg);
   clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
   opacity: 0.25;
 }
+
 .segment:nth-child(4) {
   transform: rotate(90deg);
   clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
   opacity: 0.25;
 }
+
 .segment:nth-child(5) {
   transform: rotate(162deg);
   clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
@@ -117,45 +127,50 @@ html {
 
 .tokenomic65 {
   background-image: url('assets/images/65.png');
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 .tokenomic5 {
   background-image: url('assets/images/5.png');
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 .tokenomic101 {
   background-image: url('assets/images/10-1.png');
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 .tokenomic102 {
   background-image: url('assets/images/10-2.png');
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 .tokenomic103 {
   background-image: url('assets/images/10-3.png');
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
-.tokenomic65:hover {
+.tokenomic65-high {
+  background-image: url('assets/images/65.png');
   opacity: 1;
 }
 
-.tokenomic5:hover {
+.tokenomic5-high {
+  background-image: url('assets/images/5.png');
   opacity: 1;
 }
 
-.tokenomic101:hover {
+.tokenomic101-high {
+  background-image: url('assets/images/10-1.png');
   opacity: 1;
 }
 
-.tokenomic102:hover {
+.tokenomic102-high {
+  background-image: url('assets/images/10-2.png');
   opacity: 1;
 }
 
-.tokenomic103:hover {
+.tokenomic103-high {
+  background-image: url('assets/images/10-3.png');
   opacity: 1;
 }

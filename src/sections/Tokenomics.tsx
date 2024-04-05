@@ -8,14 +8,24 @@ import SimpleDonutChart from '../components/DonutChart'
 
 const Tokenomics: React.FC = () => {
 
-  const [isActive, setIsActive] = useState(2)
-  const [isHover, setIsHover] = useState(NaN)
+  const [hoverIndexScale, setHoverIndexScale] = useState(2)
+  const [hoverIndexColor, setHoverIndexColor] = useState(NaN)
+
+  const handleHover = (index: number) => {
+    setHoverIndexColor(index)
+    setHoverIndexScale(index)
+  }
+
+  const handleOut = () => {
+    setHoverIndexColor(NaN)
+    setHoverIndexScale(2)
+  }
 
   return (
     <div className=' h-screen flex flex-col w-screen max-md:h-auto relative' id='tokenomics'>
       <div className='basis-1/5 flex justify-center items-end'>
         <div>
-          <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Tokenomics</h1>
+          <h1 className='text-[48px] focus-color poppins text-center font-medium leading-[72px]'>Tokenomics</h1>
         </div>
       </div>
       <div className='flex flex-row basis-4/5'>
@@ -88,11 +98,11 @@ const Tokenomics: React.FC = () => {
               </div>
             </div>
 
-            <div className='absolute z-[12] w-[448px] h-[448px] rounded-full cursor-pointer tokenomic65' > </div>
-            <div className='absolute z-[13] left-[402px] top-[126px] w-[65px] h-[69px] cursor-pointer tokenomic5' ></div>
-            <div className='absolute z-[14] left-[451px] top-[140px] w-[130px] h-[115px] tokenomic101 cursor-pointer' ></div>
-            <div className='absolute z-[13] left-[536px] top-[223px] w-[90px] h-[128px] tokenomic102 cursor-pointer' ></div>
-            <div className='absolute z-[13] left-[535px] top-[353px] w-[90px] h-[128px] tokenomic103 cursor-pointer' ></div>
+            <div className={`absolute z-[12] w-[448px] h-[448px] rounded-full cursor-pointer ${hoverIndexColor === 2 || isNaN(hoverIndexColor) ? 'tokenomic65-high' : 'tokenomic65'}`} > </div>
+            <div className={`absolute z-[13] left-[402px] top-[126px] w-[65px] h-[69px] cursor-pointer ${hoverIndexColor === 3 || isNaN(hoverIndexColor) ? 'tokenomic5-high' : 'tokenomic5'}`} ></div>
+            <div className={`absolute z-[14] left-[451px] top-[140px] w-[130px] h-[115px] ${hoverIndexColor === 0 || isNaN(hoverIndexColor) ? 'tokenomic101-high' : 'tokenomic101'} cursor-pointer`} ></div>
+            <div className={`absolute z-[13] left-[536px] top-[223px] w-[90px] h-[128px] ${hoverIndexColor === 1 || isNaN(hoverIndexColor) ? 'tokenomic102-high' : 'tokenomic102'} cursor-pointer`} ></div>
+            <div className={`absolute z-[13] left-[535px] top-[353px] w-[90px] h-[128px] ${hoverIndexColor === 4 || isNaN(hoverIndexColor) ? 'tokenomic103-high' : 'tokenomic103'} cursor-pointer`} ></div>
             <div className='absolute z-20 rounded-full w-[333px] h-[333px]'></div>
             <div className='absolute w-[448px] h-[448px] rounded-full flex items-center justify-center bg-black'>
               <div className='text-center leading-10 text-white'>
@@ -115,8 +125,8 @@ const Tokenomics: React.FC = () => {
         <div className='flex w-[45%] flex-col my-6 items-start justify-around'>
           <div className='flex gap-2 flex-col items-center h-80'>
             {TokenData.map((card, index) => (
-              <div className=' flex justify-center items-center' onClick={() => setIsActive(index)} onMouseOver={() => setIsHover(index)} onMouseOut={() => setIsHover(NaN)}>
-                <TokenomicsCard card={card} index={index} isActive={isActive} isHover={isHover} />
+              <div className=' flex justify-center items-center' onMouseOver={() => { handleHover(index) }} onMouseOut={() => { handleOut() }}>
+                <TokenomicsCard card={card} index={index} hoverIndexColor={hoverIndexColor} hoverIndexScale={hoverIndexScale} />
               </div>
             ))}
           </div>

@@ -1,27 +1,27 @@
 interface TokenType {
   title: string,
-  number: number
+  number: string
 }
 
 export const TokenData: TokenType[] = [
   {
-    title: 'Exchange Listings',
-    number: 10000000,
+    title: 'Influencers',
+    number: '10,000,000',
   },
   {
     title: 'Marketing',
-    number: 10000000,
+    number: '10,000,000',
   },
   {
     title: 'Public Sale',
-    number: 65000000
+    number: '65,000,000'
   },
   {
     title: 'Seed Sale',
-    number: 5000000
+    number: '5,000,000'
   },
   {
     title: 'Team',
-    number: 10000000
+    number: '10,000,000'
   }
 ]

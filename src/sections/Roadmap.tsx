@@ -14,14 +14,14 @@ const Roadmap: React.FC = () => {
         <div className=" flex  flex-col relative w-full max-md:h-auto  h-[200vh]" id='roadmap'>
             <div className='basis-[10%] flex justify-center items-end'>
                 <div className=''>
-                    <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Roadmap</h1>
+                    <h1 className='text-[48px] focus-color poppins text-center font-medium leading-[72px]'>Roadmap</h1>
                 </div>
             </div>
             <div className="relative wrap flex overflow-hidden p-10">
-                <div className='basis-5/12 relative flex items-end flex-col gap-32'>
-                    <div className='relative w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(1)}>
-                        <div className={`border-gradient absolute h-full rounded-r-[20px]  p-[3px] hover:w-full hover:left-0 hover:rounded-l-[20px] ${activatedIds.includes(1) ? 'w-full left-0 rounded-l-[20px]' : 'h-full left-[222px] w-1/2 rounded-r-[20px]'}`}>
-                            <div className={`hover:bg-opacity-25 hover:left-0  bg-black h-[444px] w-[444px]  absolute rounded-[20px] ${activatedIds.includes(1) ? 'bg-opacity-25 left-0' : '-left-[222px] bg-black'} `}>
+                <div className='basis-5/12 flex items-end flex-col gap-32'>
+                    <div className=' w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(1)}>
+                        <div className={`border-gradient flex justify-center h-full px-[3px] hover:rounded-[20px] ${activatedIds.includes(1) ? 'rounded-[20px]' : ''}`}>
+                            <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(1) ? 'bg-opacity-25 rounded-[20px]' : ' bg-black'} `}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[43.57px] text-center font-light'>{RoadCardList[0].title}</h1>
                                 </div>
@@ -38,9 +38,9 @@ const Roadmap: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='relative w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(3)}>
-                        <div className={`border-gradient absolute h-full rounded-r-[20px]  p-[3px] hover:w-full hover:left-0 hover:rounded-l-[20px] ${activatedIds.includes(3) ? 'w-full left-0 rounded-l-[20px]' : 'h-full left-[222px] w-1/2 rounded-r-[20px]'}`}>
-                            <div className={`hover:bg-opacity-25 hover:left-0  bg-black h-[444px] w-[444px]  absolute rounded-[20px] ${activatedIds.includes(3) ? 'bg-opacity-25 left-0' : '-left-[222px] bg-black'} `}>
+                    <div className=' w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(3)}>
+                        <div className={`border-gradient flex justify-center h-full px-[3px] hover:rounded-[20px] ${activatedIds.includes(3) ? 'rounded-[20px]' : ''}`}>
+                            <div className={`hover:bg-opacity-25  h-full w-[444px]   ${activatedIds.includes(3) ? 'bg-opacity-25 rounded-[20px]' : 'bg-black '} `}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[43.57px] text-center font-light'>{RoadCardList[2].title}</h1>
                                 </div>
@@ -62,8 +62,8 @@ const Roadmap: React.FC = () => {
                         <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-2 top-[450px]'></div>
                         <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-3 top-[800px]'></div>
                         <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-4 top-[986px]'></div>
-                        <div className=' absolute w-full h-0.5 top-[238px] bg-cover'style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
-                        <div className=' absolute w-full h-0.5 top-[813px] bg-cover'style={{ backgroundImage: "url('assets/icons/timeline-right.svg')" }}></div>
+                        <div className=' absolute w-full h-0.5 top-[238px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
+                        <div className=' absolute w-full h-0.5 top-[813px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-right.svg')" }}></div>
                     </div>
                     <div className='flex relative basis-1/2'>
                         <div className='h-full border-gradient w-[1px]'></div>
@@ -72,13 +72,13 @@ const Roadmap: React.FC = () => {
                         <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-3 top-[800px]'></div>
                         <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-4 top-[986px]'></div>
                         <div className=' absolute w-full h-0.5  top-[463px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-right.svg')" }}></div>
-                        <div className=' absolute w-full h-0.5  top-[1000px] bg-cover'style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
+                        <div className=' absolute w-full h-0.5  top-[1000px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
                     </div>
                 </div>
                 <div className='basis-5/12 mt-[225px] flex flex-col gap-28'>
                     <div onClick={() => toggleCard(2)}>
-                        <div className={`border-gradient hover:w-[450px] p-[3px] w-[225px] rounded-l-[20px] cursor-pointer hover:rounded-r-[20px] ${activatedIds.includes(2) ? 'rounded-r-[20px] w-[450px]' : ''}`}>
-                            <div className={`bg-black rounded-[20px] hover:bg-opacity-25  bg- w-[444px] min-h-[444px] flex items-center flex-col ${activatedIds.includes(2) ? 'bg-opacity-25' : ''}`}>
+                        <div className={`border-gradient w-[450px] px-[3px] flex justify-center  cursor-pointer hover:rounded-[20px] ${activatedIds.includes(2) ? 'rounded-[20px]' : ''}`}>
+                            <div className={`bg-black hover:bg-opacity-25  w-[444px] h-[444px] flex items-center flex-col ${activatedIds.includes(2) ? 'bg-opacity-25' : ''}`}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[43.57px] font-light'>{RoadCardList[1].title}</h1>
                                 </div>
@@ -97,8 +97,8 @@ const Roadmap: React.FC = () => {
                     </div>
 
                     <div onClick={() => toggleCard(4)}>
-                        <div className={`border-gradient hover:w-[450px] p-[3px] w-[225px] rounded-l-[20px] cursor-pointer hover:rounded-r-[20px] ${activatedIds.includes(4) ? 'rounded-r-[20px] w-[450px]' : ''}`}>
-                            <div className={`bg-black rounded-[20px] hover:bg-opacity-25 w-[444px] min-h-[444px] flex items-center flex-col ${activatedIds.includes(4) ? 'bg-opacity-25' : ''}`}>
+                        <div className={`border-gradient w-[450px] px-[3px] flex justify-center  cursor-pointer hover:rounded-[20px] ${activatedIds.includes(4) ? 'rounded-[20px]' : ''}`}>
+                            <div className={`bg-black hover:bg-opacity-25  w-[444px] h-[444px] flex items-center flex-col ${activatedIds.includes(4) ? 'bg-opacity-25' : ''}`}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[43.57px] font-light'>{RoadCardList[3].title}</h1>
                                 </div>
