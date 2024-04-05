@@ -40,7 +40,7 @@ const Roadmap: React.FC = () => {
                     </div>
                     <div className=' w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(3)}>
                         <div className={`border-gradient flex justify-center h-full px-[3px] hover:rounded-[20px] ${activatedIds.includes(3) ? 'rounded-[20px]' : ''}`}>
-                            <div className={`hover:bg-opacity-25  h-full w-[444px]   ${activatedIds.includes(3) ? 'bg-opacity-25 rounded-[20px]' : 'bg-black '} `}>
+                            <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(3) ? 'bg-opacity-25 rounded-[20px]' : 'bg-black '} `}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[43.57px] text-center font-light'>{RoadCardList[2].title}</h1>
                                 </div>
