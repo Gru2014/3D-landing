@@ -2,21 +2,21 @@ import React from 'react'
 
 interface TokenType {
   title: string,
-  number: number
+  number: string
 }
 
 interface TokenomicsCardPropsType {
   card: TokenType,
   index: number,
-  isActive: number,
-  isHover: number
+  hoverIndexScale: number,
+  hoverIndexColor: number
 }
 
-const TokenomicsCard: React.FC<TokenomicsCardPropsType> = ({ card, index, isActive, isHover }) => {
+const TokenomicsCard: React.FC<TokenomicsCardPropsType> = ({ card, index, hoverIndexScale, hoverIndexColor }) => {
   return (
     <div>
-      <div className={`transition-all cursor-pointer ${isActive === index || isHover === index ? 'w-[600px] h-[70px]' : isActive === index + 1 || isActive === index - 1 || isHover === index - 1 || isHover === index + 1 ? 'w-[550px] h-[60px]' : 'w-[500px] h-[50px]'}  rounded-[20px] border-gradient-right p-[3px]`}>
-        <div className={`transition-all ${isActive === index || isHover === index ? 'bg-opacity-25' :''} h-full w-full  rounded-[20px] bg-black flex`} >
+      <div className={`transition-all cursor-pointer ${hoverIndexScale === index ? 'w-[600px] h-[70px]' : hoverIndexScale === index + 1 || hoverIndexScale === index - 1 ? 'w-[550px] h-[60px]' : 'w-[500px] h-[50px]'}  rounded-[20px] border-gradient-right p-[3px]`}>
+        <div className={`transition-all ${hoverIndexColor === index ? 'bg-opacity-25' : ''} h-full w-full  rounded-[20px] bg-black flex`} >
           <div className='text-white text-xl basis-1/2 leading-[24.2px] font-light flex items-center pl-6'>
             <div>{card.title}</div>
           </div>

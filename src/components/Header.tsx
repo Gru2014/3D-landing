@@ -35,7 +35,7 @@ const Header: React.FC<HeaderPropsType> = ({ setIsShow }) => {
         <div className='flex basis-3/5 flex-row max-md:hidden items-center justify-around'>
           {buttonList.map((button, index) => (
             <div onMouseOver={() => setBtnHover(index)} onMouseOut={() => setBtnHover(NaN)}>
-              <div  className={`${activeBtn === index ? 'focus-color'  : btnHover === index ? 'focus-color' : 'text-white '} text-xl`}>
+              <div className={`${activeBtn === index ? 'focus-color' : btnHover === index ? 'focus-color' : 'text-white '} font-medium leading-[24.2px] text-xl`}>
                 <a key={index} href={button.url} >{button.title}</a>
               </div>
             </div>

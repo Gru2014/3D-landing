@@ -14,7 +14,7 @@ const Features = () => {
         <div className='w-screen flex relative flex-col h-[200vh] max-md:h-auto' id='features'>
             <div className='basis-[10%] flex justify-center items-end'>
                 <div className=''>
-                    <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Current Features</h1>
+                    <h1 className='text-[48px] focus-color text-center poppins font-medium leading-[72px]'>Current Features</h1>
                 </div>
             </div>
             <div className=' px-24'>
@@ -30,7 +30,7 @@ const Features = () => {
                 </div>
                 <div className='flex flex-col justify-center'>
                     <div className='my-14'>
-                        <h1 className='text-[48px] focus-color text-center font-light leading-[58.09px]'>Upcoming Features</h1>
+                        <h1 className='text-[48px] focus-color poppins text-center font-medium leading-[72px]'>Upcoming Features</h1>
                     </div>
                     <div className='flex flex-row justify-evenly flex-wrap gap-1'>
                         {UpcomingFeatureCardList.map((card, index) => {
