@@ -38,7 +38,7 @@ const Tokenomics: React.FC = () => {
                   <h1 className='text-center'>
                     Public Sale
                   </h1>
-                  <h1 className='text-end'>65%</h1>
+                  <h1 className='text-end font-bold'>65%</h1>
                 </div>
                 <div className='z-20'>
                   <img src="assets/icons/tokenLine.svg" alt="" />
@@ -54,7 +54,7 @@ const Tokenomics: React.FC = () => {
                       <h1 className='text-center'>
                         Seed Sale
                       </h1>
-                      <h1 className=''>5%</h1>
+                      <h1 className='font-bold'>5%</h1>
                     </div>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ const Tokenomics: React.FC = () => {
                     <h1 className='text-center'>
                       Influencers
                     </h1>
-                    <h1 className=''>10%</h1>
+                    <h1 className='font-bold'>10%</h1>
                   </div>
                 </div>
                 <div className='flex basis-3/12 gap-3 justify-center ml-20 items-center '>
@@ -77,7 +77,7 @@ const Tokenomics: React.FC = () => {
                     <h1 className='text-center'>
                       Marketing
                     </h1>
-                    <h1 className=''>10%</h1>
+                    <h1 className='font-bold'>10%</h1>
                   </div>
                 </div>
                 <div className='flex basis-1/12 ml-10 justify-center items-center '>
@@ -88,7 +88,7 @@ const Tokenomics: React.FC = () => {
                     <h1 className='text-center'>
                       Team
                     </h1>
-                    <h1 className=''>10%</h1>
+                    <h1 className='font-bold'>10%</h1>
                   </div>
                 </div>
               </div>

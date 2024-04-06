@@ -26,8 +26,8 @@ const Card: React.FC<CurrentFeaturesProps> = ({ card, isActive }) => {
                     </div>
                     <div className='flex justify-center h-[46px]  items-center'>
                         <div>
-                            <h1 className='text-center font-medium text-base leading-[19.36px] focus-color'>{card.title1}</h1>
-                            <h1 className='text-center font-medium text-base leading-[19.36px] focus-color'>{card.title2}</h1>
+                            <h1 className='text-center font-semibold text-base leading-[19.36px] focus-color'>{card.title1}</h1>
+                            <h1 className='text-center font-semibold text-base leading-[19.36px] focus-color'>{card.title2}</h1>
                         </div>
                     </div>
                 </div>
