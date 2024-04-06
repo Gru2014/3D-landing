@@ -80,51 +80,6 @@ html {
   background-image: linear-gradient(180deg, #5FF0E0 0%, #717BF7 2754%);
 }
 
-.circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.segment {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
-}
-
-.segment:nth-child(1) {
-  transform: rotate(0deg);
-  clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
-  opacity: 0.25;
-}
-
-.segment:nth-child(2) {
-  transform: rotate(18deg);
-  clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
-  opacity: 0.25;
-}
-
-.segment:nth-child(3) {
-  transform: rotate(54deg);
-  clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
-  opacity: 0.25;
-}
-
-.segment:nth-child(4) {
-  transform: rotate(90deg);
-  clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
-  opacity: 0.25;
-}
-
-.segment:nth-child(5) {
-  transform: rotate(162deg);
-  clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%);
-  opacity: 0.25;
-}
-
 .tokenomic65 {
   background-image: url('assets/images/65.png');
   opacity: 0.6;

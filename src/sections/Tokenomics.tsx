@@ -25,7 +25,7 @@ const Tokenomics: React.FC = () => {
     <div className=' h-screen flex flex-col w-screen max-md:h-auto relative' id='tokenomics'>
       <div className='basis-1/5 flex justify-center items-end'>
         <div>
-          <h1 className='text-[48px] focus-color poppins text-center font-medium leading-[72px]'>Tokenomics</h1>
+          <h1 className='text-[48px] focus-color poppins text-center font-medium leading-[72px]'>TOKENOMICS</h1>
         </div>
       </div>
       <div className='flex flex-row basis-4/5'>

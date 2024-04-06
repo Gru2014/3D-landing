@@ -43,14 +43,14 @@ const Header: React.FC<HeaderPropsType> = ({ setIsShow }) => {
         </div>
         <div className='basis-1/5 flex flex-row items-center justify-end gap-5  text-white max-md:basis-1/2 max-[449px]:hidden'>
           <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={() => setIsShow('SignUp')}>
-            <div className='py-3 px-8 rounded-[20px] text-xs hover:bg-opacity-25 bg-black'>
+            <div className='py-3 px-8 rounded-[20px] text-xs font-semibold leading-[14.52px] hover:bg-opacity-25 bg-black'>
               <div className='focus-color'>
                 Sign Up
               </div>
             </div>
           </div>
           <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={() => setIsShow('SignIn')}>
-            <div className='py-3 px-8 rounded-[20px] text-xs hover:bg-opacity-25 bg-black'>
+            <div className='py-3 px-8 rounded-[20px] text-xs font-semibold leading-[14.52px] hover:bg-opacity-25 bg-black'>
               Sign In
             </div>
           </div>

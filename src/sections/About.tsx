@@ -12,7 +12,7 @@ const About: React.FC = () => {
         <div className='h-screen w-screen relative flex flex-col max-md:h-auto' id='about'>
             <div className='basis-1/5 flex justify-center items-end'>
                 <div>
-                    <h1 className='text-[48px] poppins focus-color text-center font-medium leading-[72px]'>About</h1>
+                    <h1 className='text-[48px] poppins focus-color text-center font-medium leading-[72px]'>ABOUT</h1>
                 </div>
             </div>
             <div className='flex basis-2/5 justify-center flex-col items-center'>

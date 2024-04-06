@@ -1,23 +1,31 @@
-<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g filter="url(#filter0_d_1_89)">
-        <path
-            d="M23.8571 14.7143L29 19.8571M29 19.8571L23.8571 25M29 19.8571H5M10.1429 11.2857L5 6.14286M5 6.14286L10.1429 1M5 6.14286H29"
-            stroke="white" stroke-linecap="round" stroke-linejoin="round"
-            shape-rendering="crispEdges" />
-    </g>
-    <defs>
-        <filter id="filter0_d_1_89" x="0.5" y="0.5" width="33" height="33"
-            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feColorMatrix in="SourceAlpha" type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-            <feOffset dy="4" />
-            <feGaussianBlur stdDeviation="2" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_89" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_89" result="shape" />
-        </filter>
-    </defs>
+<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="52" height="52" rx="26" fill="black" />
+  <rect x="1" y="1" width="52" height="52" rx="26" stroke="url(#paint0_linear_44_44)"
+    stroke-width="2" />
+  <path
+    d="M39 22.1123C38.7441 22.1123 38.4883 22.0146 38.293 21.8193L32.1807 15.707C31.79 15.3164 31.79 14.6836 32.1807 14.293C32.5713 13.9023 33.2041 13.9023 33.5947 14.293L39.707 20.4053C40.0976 20.7959 40.0976 21.4287 39.707 21.8193C39.5117 22.0146 39.2559 22.1123 39 22.1123Z"
+    fill="white" />
+  <path
+    d="M32.8877 28.2246C32.6318 28.2246 32.376 28.1269 32.1807 27.9316C31.79 27.541 31.79 26.9082 32.1807 26.5176L38.293 20.4053C38.6836 20.0146 39.3164 20.0146 39.707 20.4053C40.0976 20.7959 40.0976 21.4287 39.707 21.8193L33.5947 27.9316C33.3994 28.1269 33.1435 28.2246 32.8877 28.2246Z"
+    fill="white" />
+  <path
+    d="M39 22.1123H15C14.4477 22.1123 14 21.6646 14 21.1123C14 20.5601 14.4477 20.1123 15 20.1123H39C39.5522 20.1123 40 20.5601 40 21.1123C40 21.6646 39.5522 22.1123 39 22.1123Z"
+    fill="white" />
+  <path
+    d="M21.1123 40C20.8564 40 20.6006 39.9023 20.4053 39.707L14.293 33.5952C13.9023 33.2046 13.9023 32.5718 14.293 32.1811C14.6836 31.7905 15.3164 31.7905 15.707 32.1811L21.8193 38.293C22.2099 38.6836 22.2099 39.3164 21.8193 39.707C21.624 39.9023 21.3682 40 21.1123 40Z"
+    fill="white" />
+  <path
+    d="M15 33.8882C14.7441 33.8882 14.4883 33.7905 14.293 33.5952C13.9023 33.2046 13.9023 32.5718 14.293 32.1811L20.4053 26.0688C20.7959 25.6782 21.4287 25.6782 21.8193 26.0688C22.2099 26.4595 22.2099 27.0923 21.8193 27.4829L15.707 33.5952C15.5117 33.7905 15.2559 33.8882 15 33.8882Z"
+    fill="white" />
+  <path
+    d="M39 33.8887H15.0005C14.4482 33.8887 14.0005 33.4409 14.0005 32.8887C14.0005 32.3364 14.4482 31.8887 15.0005 31.8887H39C39.5522 31.8887 40 32.3364 40 32.8887C40 33.4409 39.5522 33.8887 39 33.8887Z"
+    fill="white" />
+  <defs>
+    <linearGradient id="paint0_linear_44_44" x1="29.3973" y1="2.5" x2="29.3973" y2="52.5"
+      gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5FF0E0" />
+      <stop offset="1" stop-color="#717BF7" />
+    </linearGradient>
+  </defs>
 </svg>
-    
+  
