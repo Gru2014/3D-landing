@@ -14,23 +14,23 @@ const Roadmap: React.FC = () => {
         <div className=" flex  flex-col relative w-full max-md:h-auto  h-[200vh]" id='roadmap'>
             <div className='basis-[10%] flex justify-center items-end'>
                 <div className=''>
-                    <h1 className='text-[48px] focus-color poppins text-center font-medium leading-[72px]'>Roadmap</h1>
+                    <h1 className='text-[48px] focus-color poppins text-center font-medium leading-[72px]'>ROADMAP</h1>
                 </div>
             </div>
             <div className="relative wrap flex overflow-hidden p-10">
                 <div className='basis-5/12 flex items-end flex-col gap-32'>
                     <div className=' w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(1)}>
-                        <div className={`border-gradient flex justify-center h-full px-[3px] hover:rounded-[20px] ${activatedIds.includes(1) ? 'rounded-[20px]' : ''}`}>
-                            <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(1) ? 'bg-opacity-25 rounded-[20px]' : ' bg-black'} `}>
+                        <div className={`border-gradient flex justify-center h-full px-[3px] `}>
+                            <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(1) ? 'bg-opacity-25' : ' bg-black'} `}>
                                 <div className='my-8'>
-                                    <h1 className='focus-color text-4xl leading-[43.57px] text-center font-light'>{RoadCardList[0].title}</h1>
+                                    <h1 className='focus-color text-4xl leading-[38.73px] text-center font-medium'>{RoadCardList[0].title}</h1>
                                 </div>
                                 <div className='text-white text-sm flex w-full '>
                                     <div className='px-8 w-full'>
                                         {RoadCardList[0].questions.map((question, index) => (
                                             <div className='flex justify-between ' >
                                                 <p key={index} className='pb-5 px-3'>{question} </p>
-                                                <p><img src='assets/icons/check.svg' /></p>
+                                                <p><img src='assets/icons/road-check.svg' /></p>
                                             </div>
                                         ))}
                                     </div>
@@ -39,10 +39,10 @@ const Roadmap: React.FC = () => {
                         </div>
                     </div>
                     <div className=' w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(3)}>
-                        <div className={`border-gradient flex justify-center h-full px-[3px] hover:rounded-[20px] ${activatedIds.includes(3) ? 'rounded-[20px]' : ''}`}>
-                            <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(3) ? 'bg-opacity-25 rounded-[20px]' : 'bg-black '} `}>
+                        <div className={`border-gradient flex justify-center h-full px-[3px] `}>
+                            <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(3) ? 'bg-opacity-25 ' : 'bg-black '} `}>
                                 <div className='my-8'>
-                                    <h1 className='focus-color text-4xl leading-[43.57px] text-center font-light'>{RoadCardList[2].title}</h1>
+                                    <h1 className='focus-color text-4xl leading-[38.73px] text-center font-medium'>{RoadCardList[2].title}</h1>
                                 </div>
                                 <div className='text-white text-sm flex w-full '>
                                     <div className='px-8 w-full'>
@@ -77,10 +77,10 @@ const Roadmap: React.FC = () => {
                 </div>
                 <div className='basis-5/12 mt-[225px] flex flex-col gap-28'>
                     <div onClick={() => toggleCard(2)}>
-                        <div className={`border-gradient w-[450px] px-[3px] flex justify-center  cursor-pointer hover:rounded-[20px] ${activatedIds.includes(2) ? 'rounded-[20px]' : ''}`}>
+                        <div className={`border-gradient w-[450px] px-[3px] flex justify-center  cursor-pointer `}>
                             <div className={`bg-black hover:bg-opacity-25  w-[444px] h-[444px] flex items-center flex-col ${activatedIds.includes(2) ? 'bg-opacity-25' : ''}`}>
                                 <div className='my-8'>
-                                    <h1 className='focus-color text-4xl leading-[43.57px] font-light'>{RoadCardList[1].title}</h1>
+                                    <h1 className='focus-color text-4xl leading-[38.73px] font-medium'>{RoadCardList[1].title}</h1>
                                 </div>
                                 <div className='text-white text-sm flex '>
                                     <div className='px-3'>
@@ -97,10 +97,10 @@ const Roadmap: React.FC = () => {
                     </div>
 
                     <div onClick={() => toggleCard(4)}>
-                        <div className={`border-gradient w-[450px] px-[3px] flex justify-center  cursor-pointer hover:rounded-[20px] ${activatedIds.includes(4) ? 'rounded-[20px]' : ''}`}>
+                        <div className={`border-gradient w-[450px] px-[3px] flex justify-center  cursor-pointer`}>
                             <div className={`bg-black hover:bg-opacity-25  w-[444px] h-[444px] flex items-center flex-col ${activatedIds.includes(4) ? 'bg-opacity-25' : ''}`}>
                                 <div className='my-8'>
-                                    <h1 className='focus-color text-4xl leading-[43.57px] font-light'>{RoadCardList[3].title}</h1>
+                                    <h1 className='focus-color text-4xl leading-[38.73px] font-medium'>{RoadCardList[3].title}</h1>
                                 </div>
                                 <div className='text-white text-sm flex '>
                                     <div className='px-3'>

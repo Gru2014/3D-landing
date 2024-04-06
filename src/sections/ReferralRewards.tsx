@@ -10,7 +10,7 @@ const ReferralRewards = () => {
     <div className='h-screen w-screen flex flex-col relative max-md:h-auto' id='referrals'>
       <div className='basis-1/5 flex justify-center items-end'>
         <div>
-          <h1 className='text-[48px] focus-color text-center poppins font-medium leading-[72px]'>Referral Rewards</h1>
+          <h1 className='text-[48px] focus-color text-center poppins font-medium leading-[72px]'>REFERRAL REWARDS</h1>
         </div>
       </div>
       <div className='basis-4/5 flex flex-row justify-center items-center'>

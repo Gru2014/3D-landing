@@ -6,28 +6,28 @@ interface ButtonType {
 
 export const buttonList: ButtonType[] = [
   {
-    title: 'Home',
+    title: 'HOME',
     url: '/#home'
   },
   {
-    title: 'About',
+    title: 'ABOUT',
     url: '/#about'
   },
   {
-    title: 'Features',
+    title: 'FEATURES',
     url: '/#features'
   },
   {
-    title: 'Tokenomics',
+    title: 'TOKENOMICS',
     url: '/#tokenomics'
   },
   {
-    title: 'Roadmap',
+    title: 'ROADMAP',
     url: '/#roadmap'
   },
 
   {
-    title: 'Referrals',
+    title: 'REFERRALS',
     url: '/#referrals'
   }
 ]

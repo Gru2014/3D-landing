@@ -10,15 +10,15 @@ interface TitleType {
 
 export const TierTitleData: TitleType[] = [
   {
-    title: 'Tier1',
+    title: 'Tier 1',
     icon: 'tier1.svg'
   },
   {
-    title: 'Tier2',
+    title: 'Tier 2',
     icon: 'tier2.svg'
   },
   {
-    title: 'Tier3',
+    title: 'Tier 3',
     icon: 'tier3.svg'
   }
 ]
