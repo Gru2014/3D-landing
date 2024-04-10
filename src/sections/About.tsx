@@ -16,7 +16,7 @@ const About: React.FC = () => {
                 </div>
             </div>
             <div className='flex basis-2/5 justify-center flex-col items-center'>
-                <div className=''>
+                <div className='max-[449px]:px-6'>
                     <p className='text-2xl leading-1.2 text-center text-white rounded'>Cryptocurrency is expanding faster than it ever has before. <br></br>With Millions of transactions occurring and countless new<br></br>cryptocurrency's being deployed everyday,<br></br>it’s too easy to get lost in all the noise.</p>
                 </div>
             </div>

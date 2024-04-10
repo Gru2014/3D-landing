@@ -18,15 +18,15 @@ const Roadmap: React.FC = () => {
                 </div>
             </div>
             <div className="relative wrap flex overflow-hidden p-10">
-                <div className='basis-5/12 flex items-end flex-col gap-32'>
-                    <div className=' w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(1)}>
+                <div className='basis-5/12 max-[449px]:w-10/12 flex items-end flex-col gap-32'>
+                    <div className=' w-[450px] h-[450px] max-[449px]:w-full cursor-pointer' onClick={() => toggleCard(1)}>
                         <div className={`border-gradient flex justify-center h-full px-[3px] `}>
                             <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(1) ? 'bg-opacity-25' : ' bg-black'} `}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[38.73px] text-center font-medium'>{RoadCardList[0].title}</h1>
                                 </div>
                                 <div className='text-white text-sm flex w-full '>
-                                    <div className='px-8 w-full'>
+                                    <div className='px-8 max-[449px]:px-2 w-full'>
                                         {RoadCardList[0].questions.map((question, index) => (
                                             <div className='flex justify-between ' >
                                                 <p key={index} className='pb-5 px-3'>{question} </p>
@@ -38,14 +38,30 @@ const Roadmap: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=' w-[450px] h-[450px] cursor-pointer' onClick={() => toggleCard(3)}>
+                    <div className=' w-[450px] h-[450px] min-[449px]:hidden max-[449px]:w-full cursor-pointer' onClick={() => toggleCard(2)}>
+                        <div className={`border-gradient flex justify-center h-full px-[3px] `}>
+                            <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(2) ? 'bg-opacity-25 ' : 'bg-black '} `}>
+                                <div className='my-8'>
+                                    <h1 className='focus-color text-4xl leading-[38.73px] text-center font-medium'>{RoadCardList[1].title}</h1>
+                                </div>
+                                <div className='text-white text-sm flex w-full '>
+                                    <div className='px-8 max-[449px]:px-2 w-full '>
+                                        {RoadCardList[1].questions.map((question, index) => (
+                                            <p key={index} className='pb-3 px-3'>{question}</p>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='overflow-hidden w-[450px] h-[450px] max-[449px]:w-full cursor-pointer' onClick={() => toggleCard(3)}>
                         <div className={`border-gradient flex justify-center h-full px-[3px] `}>
                             <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(3) ? 'bg-opacity-25 ' : 'bg-black '} `}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[38.73px] text-center font-medium'>{RoadCardList[2].title}</h1>
                                 </div>
                                 <div className='text-white text-sm flex w-full '>
-                                    <div className='px-8 w-full'>
+                                    <div className='px-8 w-full max-[449px]:px-2 '>
                                         {RoadCardList[2].questions.map((question, index) => (
                                             <p key={index} className='pb-3 px-3'>{question}</p>
                                         ))}
@@ -54,31 +70,49 @@ const Roadmap: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <div className=' w-[450px] h-[450px] min-[449px]:hidden max-[449px]:w-full cursor-pointer' onClick={() => toggleCard(4)}>
+                        <div className={`border-gradient flex justify-center h-full px-[3px] `}>
+                            <div className={`hover:bg-opacity-25 bg-black h-full w-[444px]   ${activatedIds.includes(4) ? 'bg-opacity-25 ' : 'bg-black '} `}>
+                                <div className='my-8'>
+                                    <h1 className='focus-color text-4xl leading-[38.73px] text-center font-medium'>{RoadCardList[3].title}</h1>
+                                </div>
+                                <div className='text-white text-sm flex w-full '>
+                                    <div className='px-8 max-[449px]:px-2 w-full'>
+                                        {RoadCardList[3].questions.map((question, index) => (
+                                            <p key={index} className='pb-3 px-3'>{question}</p>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className='flex basis-2/12'>
-                    <div className='flex relative justify-end basis-1/2'>
+                <div className='flex basis-2/12 '>
+                    <div className='flex relative justify-end basis-1/2 max-[449px]:w-full '>
                         <div className='h-full border-gradient w-[1px]'></div>
                         <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-1 top-[225px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-2 top-[450px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-3 top-[800px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-4 top-[986px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-2 max-[449px]:top-[800px] top-[450px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-3 max-[449px]:top-[1350px] top-[800px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-l-full absolute z-10 timeline-4 max-[449px]:top-[1950px] top-[986px]'></div>
                         <div className=' absolute w-full h-0.5 top-[238px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
-                        <div className=' absolute w-full h-0.5 top-[813px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-right.svg')" }}></div>
+                        <div className=' absolute w-full h-0.5  top-[813px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-right.svg')" }}></div>
+                        <div className=' absolute w-full h-0.5  top-[813px] bg-cover min-[449px]:hidden max-[449px]:top-[1362px]' style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
+                        <div className=' absolute w-full h-0.5  top-[813px] bg-cover min-[449px]:hidden max-[449px]:top-[1962px]' style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
                     </div>
-                    <div className='flex relative basis-1/2'>
+                    <div className='flex relative basis-1/2 '>
                         <div className='h-full border-gradient w-[1px]'></div>
                         <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-1 top-[225px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-2 top-[450px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-3 top-[800px]'></div>
-                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-4 top-[986px]'></div>
-                        <div className=' absolute w-full h-0.5  top-[463px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-right.svg')" }}></div>
-                        <div className=' absolute w-full h-0.5  top-[1000px] bg-cover' style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
+                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-2 max-[449px]:top-[800px]  top-[450px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-3 max-[449px]:top-[1350px] top-[800px]'></div>
+                        <div className='w-[12px] h-[25px] rounded-r-full absolute z-10 timeline-4 max-[449px]:top-[1950px] top-[986px]'></div>
+                        <div className=' absolute w-full h-0.5 top-[463px] bg-cover max-[449px]:hidden' style={{ backgroundImage: "url('assets/icons/timeline-right.svg')" }}></div>
+                        <div className=' absolute w-full h-0.5  top-[1000px] bg-cover max-[449px]:hidden' style={{ backgroundImage: "url('assets/icons/timeline-left.svg')" }}></div>
                     </div>
                 </div>
-                <div className='basis-5/12 mt-[225px] flex flex-col gap-28'>
+                <div className='basis-5/12 mt-[225px] flex flex-col gap-28 max-[449px]:hidden'>
                     <div onClick={() => toggleCard(2)}>
-                        <div className={`border-gradient w-[450px] px-[3px] flex justify-center  cursor-pointer `}>
-                            <div className={`bg-black hover:bg-opacity-25  w-[444px] h-[444px] flex items-center flex-col ${activatedIds.includes(2) ? 'bg-opacity-25' : ''}`}>
+                        <div className={`border-gradient w-[450px] max-[449px]:w-full px-[3px] flex justify-center  cursor-pointer `}>
+                            <div className={`bg-black hover:bg-opacity-25  w-[444px] max-[449px]:w-[194px] h-[444px] flex items-center flex-col ${activatedIds.includes(2) ? 'bg-opacity-25' : ''}`}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[38.73px] font-medium'>{RoadCardList[1].title}</h1>
                                 </div>
@@ -97,15 +131,15 @@ const Roadmap: React.FC = () => {
                     </div>
 
                     <div onClick={() => toggleCard(4)}>
-                        <div className={`border-gradient w-[450px] px-[3px] flex justify-center  cursor-pointer`}>
-                            <div className={`bg-black hover:bg-opacity-25  w-[444px] h-[444px] flex items-center flex-col ${activatedIds.includes(4) ? 'bg-opacity-25' : ''}`}>
+                        <div className={`border-gradient w-[450px]  max-[449px]:w-full px-[3px] flex justify-center  cursor-pointer`}>
+                            <div className={`bg-black hover:bg-opacity-25 w-[444px] h-[444px] flex items-center flex-col ${activatedIds.includes(4) ? 'bg-opacity-25' : ''}`}>
                                 <div className='my-8'>
                                     <h1 className='focus-color text-4xl leading-[38.73px] font-medium'>{RoadCardList[3].title}</h1>
                                 </div>
                                 <div className='text-white text-sm flex '>
                                     <div className='px-3'>
                                         {RoadCardList[3].questions.map((question, index) => (
-                                            <p key={index} className=' pb-5 px-3'>{question}</p>
+                                            <p key={index} className=' pb-5 '>{question}</p>
                                         ))}
                                     </div>
                                     <div>
@@ -116,45 +150,6 @@ const Roadmap: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className=" absolute line-gradient  h-full border left-1/2"></div>
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                    <div className="order-1 w-5/12"></div>
-                    <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-                    </div>
-                    <div className="order-1 w-5/12 flex justify-end">
-                        <RoadCard card={RoadCardList[0]} direction={direction[0]} />
-                    </div>
-                </div>
-
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                    <div className="order-1 w-5/12"></div>
-                    <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-
-                    </div>
-                    <div className="order-1 w-5/12 ">
-                        <RoadCard card={RoadCardList[1]} direction={direction[1]} />
-                    </div>
-                </div>
-
-                <div className="mb-7 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                    <div className="order-1 w-5/12"></div>
-                    <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-                        <h1 className="mx-auto font-semibold text-lg text-white"></h1>
-                    </div>
-                    <div className="order-1 w-5/12">
-                        <RoadCard card={RoadCardList[2]} direction={direction[2]} />
-                    </div>
-                </div>
-
-                <div className="mb-8 flex justify-between  items-center w-full right-timeline">
-                    <div className="order-1 w-5/12"></div>
-                    <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-                        <h1 className="mx-auto text-white font-semibold text-lg"></h1>
-                    </div>
-                    <div className="order-1 w-5/12 ">
-                        <RoadCard card={RoadCardList[3]} direction={direction[3]}/>
-                    </div>
-                </div> */}
             </div>
         </div>
     )

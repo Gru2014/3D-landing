@@ -14,15 +14,15 @@ const ReferralRewards = () => {
         </div>
       </div>
       <div className='basis-4/5 flex flex-row justify-center items-center'>
-        <div className='basis-2/3 h-2/3 flex flex-row  justify-between'>
-          <div className='basis-1/3  flex flex-col justify-between items-end'>
+        <div className='basis-2/3 h-2/3 flex flex-row max-[449px]:flex-col max-[449px]:gap-5  justify-between'>
+          <div className='basis-1/3 max-[449px]:w-full max-[449px]:gap-4 flex flex-col justify-between items-end'>
             {TierTitleData.map((card, index) => (
-              <div onClick={()=>setActiveIndex(index)}>
+              <div onClick={() => setActiveIndex(index)}>
                 <TierTitle card={card} index={index} activeIndex={activeIndex} />
               </div>
             ))}
           </div>
-          <div className='basis-2/3 flex justify-end'>
+          <div className='basis-2/3 flex max-[449px]:w-full justify-end max-[449px]:justify-center max-[449px]:my-6'>
             <div className='h-full w-11/12 border-gradient rounded-[20px] p-[3px] '>
               <div className='bg-black h-full w-full rounded-[20px] text-center flex flex-col justify-center'>
                 <div>
@@ -30,7 +30,7 @@ const ReferralRewards = () => {
                 </div>
                 <div className='text-white font-light'>
                   <h2 className=' text-5xl leading-[58.09px]'>Subscription Fees</h2>
-                  <p className='text-[22px] leading-[26.63px] p-2'>When you refer {activeIndex === 0 ? '1 user' : activeIndex === 1 ? '5 users' : activeIndex === 2 ? '10 users' : ''} who signs<br/> up to a monthly or yearly subscription</p>
+                  <p className='text-[22px] leading-[26.63px] p-2'>When you refer {activeIndex === 0 ? '1 user' : activeIndex === 1 ? '5 users' : activeIndex === 2 ? '10 users' : ''} who signs<br /> up to a monthly or yearly subscription</p>
                 </div>
               </div>
             </div>

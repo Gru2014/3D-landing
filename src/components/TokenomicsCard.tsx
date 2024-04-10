@@ -14,8 +14,8 @@ interface TokenomicsCardPropsType {
 
 const TokenomicsCard: React.FC<TokenomicsCardPropsType> = ({ card, index, hoverIndexScale, hoverIndexColor }) => {
   return (
-    <div>
-      <div className={`transition-all cursor-pointer ${hoverIndexScale === index ? 'w-[600px] h-[70px]' : hoverIndexScale === index + 1 || hoverIndexScale === index - 1 ? 'w-[550px] h-[60px]' : 'w-[500px] h-[50px]'}  rounded-[20px] border-gradient-right p-[3px]`}>
+    <div className='max-[449px]:w-screen max-[449px]:flex max-[449px]:justify-center'>
+      <div className={`transition-all max-[449px]:w-5/6 cursor-pointer ${hoverIndexScale === index ? 'w-[600px] h-[70px] ' : hoverIndexScale === index + 1 || hoverIndexScale === index - 1 ? 'w-[550px] h-[60px]' : 'w-[500px] h-[50px]'}  rounded-[20px] border-gradient-right p-[3px]`}>
         <div className={`transition-all ${hoverIndexColor === index ? 'bg-opacity-25' : ''} h-full w-full  rounded-[20px] bg-black flex`} >
           <div className='text-white text-xl basis-1/2 leading-[24.2px] font-light flex items-center pl-6'>
             <div>{card.title}</div>
