@@ -9,7 +9,7 @@ const About: React.FC = () => {
     }
 
     return (
-        <div className='min-h-screen w-screen relative flex flex-col max-[769px]:h-auto' id='about'>
+        <div className='h-screen w-screen relative flex flex-col max-[769px]:h-auto' id='about'>
             <div className='basis-1/5 flex justify-center items-end'>
                 <div>
                     <h1 className='text-[48px] poppins focus-color text-center font-medium leading-[72px]'>ABOUT</h1>
