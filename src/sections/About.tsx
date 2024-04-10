@@ -9,14 +9,14 @@ const About: React.FC = () => {
     }
 
     return (
-        <div className='h-screen w-screen relative flex flex-col max-md:h-auto' id='about'>
+        <div className='h-screen w-screen relative flex flex-col max-[769px]:h-auto' id='about'>
             <div className='basis-1/5 flex justify-center items-end'>
                 <div>
                     <h1 className='text-[48px] poppins focus-color text-center font-medium leading-[72px]'>ABOUT</h1>
                 </div>
             </div>
             <div className='flex basis-2/5 justify-center flex-col items-center'>
-                <div className=''>
+                <div className='max-[769px]:px-6'>
                     <p className='text-2xl leading-1.2 text-center text-white rounded'>Cryptocurrency is expanding faster than it ever has before. <br></br>With Millions of transactions occurring and countless new<br></br>cryptocurrency's being deployed everyday,<br></br>it’s too easy to get lost in all the noise.</p>
                 </div>
             </div>
