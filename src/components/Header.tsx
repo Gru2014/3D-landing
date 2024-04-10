@@ -20,19 +20,19 @@ const Header: React.FC<HeaderPropsType> = ({ setIsShow }) => {
     <>
       {/* <MenuList /> */}
       <div className=' fixed flex py-4 px-12 w-screen z-30 backdrop-blur'>
-        <div className='hidden max-md:flex basis-1/12'>
+        <div className='hidden max-[769px]:flex basis-1/12'>
           <button className='text-white' onClick={() => setIsShowMenu(true)}>
             list
           </button>
         </div>
-        <div className='basis-1/5 max-md:basis-1/2 max-md:flex flex-row max-[449px]:basis-11/12 max-[449px]:justify-center'>
+        <div className='basis-1/5 max-[769px]:basis-full max-[769px]:flex flex-row max-[449px]:basis-11/12 max-[769px]:justify-center'>
           <div className=''>
             <a href='/'>
               <img src='assets/images/logo.svg'></img>
             </a>
           </div>
         </div>
-        <div className='flex basis-3/5 flex-row max-md:hidden items-center justify-around'>
+        <div className='flex basis-3/5 flex-row max-[769px]:hidden items-center justify-around'>
           {buttonList.map((button, index) => (
             <div onMouseOver={() => setBtnHover(index)} onMouseOut={() => setBtnHover(NaN)}>
               <div className={`${activeBtn === index ? 'focus-color' : btnHover === index ? 'focus-color' : 'text-white '} font-medium leading-[24.2px] text-xl`}>
@@ -41,7 +41,7 @@ const Header: React.FC<HeaderPropsType> = ({ setIsShow }) => {
             </div>
           ))}
         </div>
-        <div className='basis-1/5 flex flex-row items-center justify-end gap-5  text-white max-md:basis-1/2 max-[449px]:hidden'>
+        <div className='basis-1/5 flex flex-row items-center justify-end gap-5  text-white max-md:basis-1/2 max-[769px]:hidden'>
           <div className='p-0.5 border-gradient cursor-pointer rounded-[20px]' onClick={() => setIsShow('SignUp')}>
             <div className='py-3 px-8 rounded-[20px] text-xs font-semibold leading-[14.52px] hover:bg-opacity-25 bg-black'>
               <div className='focus-color'>
